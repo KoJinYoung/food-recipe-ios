@@ -9,12 +9,4 @@
 #ifndef foodRecipe_bridgefile_h
 #define foodRecipe_bridgefile_h
 
-/* AFNetworking */
-#import <AFNetworking/AFNetworking.h>
-#import <AFNetworking/UIImageView+Afnetworking.h>
-
-/* facebook */
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-
 #endif

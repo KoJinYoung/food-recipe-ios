@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MF-ow-LaI">
                                 <rect key="frame" x="80" y="180" width="440" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrR-LM-RxS" customClass="FBSDKLoginButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrR-LM-RxS">
                                         <rect key="frame" x="5" y="30" width="430" height="41.5"/>
                                         <state key="normal" title="Facebook">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,6 +80,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="YaE-EU-ib4"/>
+                    <connections>
+                        <outlet property="btn_login_email" destination="hYA-4z-fUQ" id="HYg-hH-AKb"/>
+                        <outlet property="btn_login_facebook" destination="lrR-LM-RxS" id="1JT-JT-dS2"/>
+                        <outlet property="btn_login_kakao" destination="TX2-8b-aUi" id="75x-Ma-CWx"/>
+                        <outlet property="btn_login_naver" destination="pEK-Gd-vwg" id="b7W-dL-kIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjF-qj-rwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -2,8 +2,6 @@
 
 import UIKit
 
-var str = "ㅋㅋㅋㅋㅋ"
+var token:String?
 
-str = str + "고진영"
-
-print(str)
+print(token == nil ? "true" : "false")

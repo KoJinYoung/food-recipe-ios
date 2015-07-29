@@ -7,7 +7,7 @@ target 'foodRecipe' do
 
 pod 'AFNetworking', '2.5.4'
 pod 'thrift', '0.9.2'
-pod 'KeychainAccess', '1.2.1'
+#pod 'KeychainAccess', '1.2.1'
 pod 'FBSDKCoreKit', '4.4.0'
 pod 'FBSDKLoginKit', '4.4.0'
 pod 'FBSDKShareKit', '4.4.0'

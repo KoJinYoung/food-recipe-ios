@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="YhE-eS-WBj">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="xqr-tD-m5k" customClass="LoginViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="xqr-tD-m5k" customClass="loginViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TLL-Lc-xsW"/>
                         <viewControllerLayoutGuide type="bottom" id="lca-L4-JvX"/>
@@ -24,6 +24,9 @@
                                         <state key="normal" title="Facebook">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login_facebook:" destination="xqr-tD-m5k" eventType="touchUpInside" id="OzI-HN-g2Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX2-8b-aUi">
                                         <rect key="frame" x="5" y="76.5" width="430" height="41"/>
@@ -81,10 +84,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="YaE-EU-ib4"/>
                     <connections>
-                        <outlet property="btn_login_email" destination="hYA-4z-fUQ" id="HYg-hH-AKb"/>
-                        <outlet property="btn_login_facebook" destination="lrR-LM-RxS" id="1JT-JT-dS2"/>
-                        <outlet property="btn_login_kakao" destination="TX2-8b-aUi" id="75x-Ma-CWx"/>
-                        <outlet property="btn_login_naver" destination="pEK-Gd-vwg" id="b7W-dL-kIv"/>
+                        <outlet property="btn_login_email" destination="hYA-4z-fUQ" id="Gea-hv-LHI"/>
+                        <outlet property="btn_login_facebook" destination="lrR-LM-RxS" id="NAm-pA-Dk8"/>
+                        <outlet property="btn_login_kakao" destination="TX2-8b-aUi" id="aVp-Ey-qeh"/>
+                        <outlet property="btn_login_naver" destination="pEK-Gd-vwg" id="k4T-H6-nft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjF-qj-rwk" userLabel="First Responder" sceneMemberID="firstResponder"/>

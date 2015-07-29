@@ -1,77 +1,89 @@
 //
-//  LoginViewController.swift
+//  loginViewController.swift
 //  foodRecipe
 //
-//  Created by zilla on 2015. 7. 21..
+//  Created by Jin-young Ko on 2015. 7. 29..
 //  Copyright (c) 2015년 MakSSe. All rights reserved.
 //
 
 import UIKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-    @IBOutlet var btn_login_facebook: FBSDKLoginButton!
+class loginViewController: UIViewController {
+
+
+    @IBOutlet var btn_login_facebook: UIButton!
     @IBOutlet var btn_login_kakao: UIButton!
     @IBOutlet var btn_login_naver: UIButton!
     @IBOutlet var btn_login_email: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // facebook
-        self.btn_login_facebook.delegate = self
-//        self.btn_login_facebook.
-        
-        // add Target
-        self.btn_login_facebook.addTarget(self, action: Selector("login_facebook"), forControlEvents: UIControlEvents.TouchUpInside)
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            self.btn_login_facebook.setTitle("Facebook Logout", forState: UIControlState.Normal)
+        }
+        else {
+            self.btn_login_facebook.setTitle("Facebook Login", forState: UIControlState.Normal)
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
-    func login_facebook() {
+    
+// MARK: Facebook
+    @IBAction func login_facebook(sender: AnyObject) {
+        
+        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            
+            fbLoginManager.logOut()
+            self.btn_login_facebook.setTitle("Facebook Login", forState: UIControlState.Normal)
         }
         else {
-            
+            fbLoginManager.logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
+                if (error == nil){
+                    var fbloginresult : FBSDKLoginManagerLoginResult = result
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.btn_login_facebook.setTitle("Facebook Logout", forState: UIControlState.Normal)
+                        self.getFBUserData()
+                    }
+                }
+                else {
+                    println("error")
+                }
+            })
         }
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
-        
-        if ((error) != nil)
-        {
-            // Process error
-        }
-        else if result.isCancelled {
-            // Handle cancellations
-        }
-        else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                // Do work
-                print(result.token.tokenString)
-            }
+    func getFBUserData(){
+        if((FBSDKAccessToken.currentAccessToken()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if (error == nil){
+                    println(result)
+                }
+            })
         }
     }
     
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
-    }
+// MARK: Kakao
+    
+// MARK: Naver
+    
+// MARK: Email
     
 }

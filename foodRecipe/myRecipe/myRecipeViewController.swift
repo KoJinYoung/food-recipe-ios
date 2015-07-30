@@ -12,6 +12,14 @@ class myRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(accountManager.hasToken()) {
+            
+        }
+        else {
+            let vc:UIViewController = myStoryboard().instantiateViewControllerWithIdentifier("loginViewController") as! UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -21,7 +21,6 @@ class loginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // facebook
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {

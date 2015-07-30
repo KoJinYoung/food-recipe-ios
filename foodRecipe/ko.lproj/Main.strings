@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "etc."; ObjectID = "1Pk-WG-yp7"; */
+"1Pk-WG-yp7.title" = "etc.";
+
+/* Class = "UITabBarItem"; title = "recipe"; ObjectID = "7MF-0t-Ywi"; */
+"7MF-0t-Ywi.title" = "recipe";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9kI-7u-Vy9"; */
+"9kI-7u-Vy9.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "my recipe"; ObjectID = "Bng-Ud-hFZ"; */
+"Bng-Ud-hFZ.title" = "my recipe";
+
+/* Class = "UITabBarItem"; title = "shop"; ObjectID = "IPI-SI-FHy"; */
+"IPI-SI-FHy.title" = "shop";
+
+/* Class = "UIButton"; normalTitle = "KakaoTalk"; ObjectID = "TX2-8b-aUi"; */
+"TX2-8b-aUi.normalTitle" = "KakaoTalk";
+
+/* Class = "UIButton"; normalTitle = "Email"; ObjectID = "hYA-4z-fUQ"; */
+"hYA-4z-fUQ.normalTitle" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Facebook"; ObjectID = "lrR-LM-RxS"; */
+"lrR-LM-RxS.normalTitle" = "Facebook";
+
+/* Class = "UIButton"; normalTitle = "Naver"; ObjectID = "pEK-Gd-vwg"; */
+"pEK-Gd-vwg.normalTitle" = "Naver";

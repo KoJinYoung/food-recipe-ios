@@ -71,9 +71,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let vc:UIViewController = myStoryboard().instantiateViewControllerWithIdentifier("loginViewController") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-//        performSegueWithIdentifier("showDetailRecipe", sender: nil)
+        performSegueWithIdentifier("showDetailRecipe", sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

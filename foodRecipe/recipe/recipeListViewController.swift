@@ -24,6 +24,9 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "recipeListCell", bundle: nil)
+        self.listView?.registerNib(nib, forCellWithReuseIdentifier: "recipeListCell")
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +34,17 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+
+        let headerView: recipeListHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "recipeListHeaderView", forIndexPath: indexPath) as! recipeListHeaderView
+        
+        let title = "Recipe Group #" + String(indexPath.section+1)
+        headerView.titleLabel.text = title
+        
+        return headerView as UICollectionReusableView
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +68,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 0, left: 5, bottom: 5, right: 5)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

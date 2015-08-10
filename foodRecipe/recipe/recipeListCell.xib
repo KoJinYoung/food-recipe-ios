@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="recipeListCell" customModule="foodRecipe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -39,6 +39,10 @@
                 <constraint firstItem="XVR-Ub-lF8" firstAttribute="top" secondItem="bWa-hS-uZg" secondAttribute="bottom" constant="5" id="h8s-D0-zdh"/>
                 <constraint firstAttribute="trailing" secondItem="XVR-Ub-lF8" secondAttribute="trailing" constant="5" id="wfl-gI-CbJ"/>
             </constraints>
+            <connections>
+                <outlet property="foodImageView" destination="bWa-hS-uZg" id="5YX-a4-Ufe"/>
+                <outlet property="userThumbnail" destination="A5s-Fj-die" id="eYX-6C-FM8"/>
+            </connections>
         </view>
     </objects>
 </document>

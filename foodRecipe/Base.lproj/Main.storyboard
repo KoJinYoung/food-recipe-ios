@@ -123,48 +123,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-H1-7Ef">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8km-oo-2Lh">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uzu-GN-sjA">
-                                    <size key="itemSize" width="216" height="298"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeListHeaderView" id="M2m-HE-6po" customClass="recipeListHeaderView" customModule="foodRecipe" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPz-qZ-ata">
-                                            <rect key="frame" x="14" y="14" width="265" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <connections>
-                                        <outlet property="titleLabel" destination="dPz-qZ-ata" id="a3V-SY-BwV"/>
-                                    </connections>
-                                </collectionReusableView>
+                                <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Jxg-f9-1hT" id="b5g-ga-YZi"/>
-                                    <outlet property="delegate" destination="Jxg-f9-1hT" id="7Bv-o1-sjU"/>
+                                    <outlet property="dataSource" destination="Jxg-f9-1hT" id="QMW-i4-Q7Q"/>
+                                    <outlet property="delegate" destination="Jxg-f9-1hT" id="pCM-Bw-q1j"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cS0-H1-7Ef" secondAttribute="trailing" id="2tV-Kx-cuw"/>
-                            <constraint firstItem="CiP-Lx-iDt" firstAttribute="top" secondItem="cS0-H1-7Ef" secondAttribute="bottom" id="G0H-Ok-lwe"/>
-                            <constraint firstItem="cS0-H1-7Ef" firstAttribute="top" secondItem="DQ6-pz-Y0U" secondAttribute="bottom" id="SLZ-04-M6P"/>
-                            <constraint firstItem="cS0-H1-7Ef" firstAttribute="leading" secondItem="Z54-l0-COI" secondAttribute="leading" id="yVq-BN-BDw"/>
+                            <constraint firstAttribute="trailing" secondItem="8km-oo-2Lh" secondAttribute="trailing" id="5it-7m-NjK"/>
+                            <constraint firstItem="8km-oo-2Lh" firstAttribute="leading" secondItem="Z54-l0-COI" secondAttribute="leading" id="9G9-Ue-czc"/>
+                            <constraint firstItem="CiP-Lx-iDt" firstAttribute="top" secondItem="8km-oo-2Lh" secondAttribute="bottom" id="ceh-AE-N5C"/>
+                            <constraint firstItem="8km-oo-2Lh" firstAttribute="top" secondItem="DQ6-pz-Y0U" secondAttribute="bottom" id="lEQ-3F-lAe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l7X-CN-IpW"/>
                     <connections>
-                        <outlet property="listView" destination="cS0-H1-7Ef" id="yTD-cl-Q8m"/>
+                        <outlet property="listView" destination="8km-oo-2Lh" id="bTg-dt-xWe"/>
                         <segue destination="QUD-JE-Jmj" kind="show" identifier="showDetailRecipe" id="knQ-kH-oTW"/>
                     </connections>
                 </viewController>

@@ -43,6 +43,7 @@
                 <outlet property="foodImageView" destination="bWa-hS-uZg" id="5YX-a4-Ufe"/>
                 <outlet property="userThumbnail" destination="A5s-Fj-die" id="eYX-6C-FM8"/>
             </connections>
+            <point key="canvasLocation" x="422" y="540"/>
         </view>
     </objects>
 </document>

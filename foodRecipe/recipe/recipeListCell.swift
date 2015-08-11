@@ -9,6 +9,58 @@
 import UIKit
 import AFNetworking
 
+//MARK:-
+class recipeListTableViewCell_horizontal : UITableViewCell {
+    
+    @IBOutlet var listView: UICollectionView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
+//MARK:-
+class recipeListTableViewCell_vertical : UITableViewCell {
+    
+    @IBOutlet var listView: UICollectionView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
+
+//MARK:-
 class recipeListCell: UICollectionViewCell {
     
     @IBOutlet var userThumbnail: UIImageView!
@@ -41,5 +93,4 @@ class recipeListCell: UICollectionViewCell {
     func setFoodImageWithURL(url:String) {
         self.foodImageView.setImageWithURL(NSURL(string: url))
     }
-    
 }

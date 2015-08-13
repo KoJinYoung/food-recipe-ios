@@ -13,16 +13,32 @@ class myRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(accountManager.hasToken()) {
-            
-        }
-        else {
-            let vc:UIViewController = myStoryboard().instantiateViewControllerWithIdentifier("loginViewController") as! UIViewController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(accountManager.hasToken()) {
+            
+        }
+        else {
+            
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+    }
+    
+    func openLoginPage() {
+        let vc:UINavigationController = myStoryboard().instantiateViewControllerWithIdentifier("loginNavigationController") as! UINavigationController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 }

@@ -59,7 +59,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
             return self.listView!.frame.size.width
         }
         else if indexPath.section == 2 {
-            return ((self.listView!.frame.size.width-10-5)/2.0) * (CGFloat)((Int)(testImageURL.count/2))
+            return ((self.listView!.frame.size.width-10-5)/2.0) * (CGFloat)((Int)(testImageURL.count/2)) + 20
         }
         
         return 0
@@ -94,6 +94,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
             cell_?.listView.tag = listType.list.rawValue
             cell_?.listView.dataSource = self
             cell_?.listView.delegate = self
+            cell_?.listView.scrollEnabled = false
             cell_?.listView.registerNib(nib, forCellWithReuseIdentifier: "recipeListCell")
             
             cell = cell_!
@@ -146,8 +147,12 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
         return 5
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 5
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        return UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

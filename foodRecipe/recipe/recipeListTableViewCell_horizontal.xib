@@ -10,9 +10,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-OY-LsR">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-OY-LsR">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eyb-ai-2MN">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ox5-kB-eb3">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -21,6 +21,12 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jgv-OY-LsR" firstAttribute="top" secondItem="UoB-cT-nWu" secondAttribute="top" id="A9j-gE-zUY"/>
+                <constraint firstAttribute="trailing" secondItem="Jgv-OY-LsR" secondAttribute="trailing" id="fuy-oR-q7v"/>
+                <constraint firstItem="Jgv-OY-LsR" firstAttribute="leading" secondItem="UoB-cT-nWu" secondAttribute="leading" id="xTf-sP-Swg"/>
+                <constraint firstAttribute="bottom" secondItem="Jgv-OY-LsR" secondAttribute="bottom" id="yXW-yU-SVg"/>
+            </constraints>
             <connections>
                 <outlet property="listView" destination="Jgv-OY-LsR" id="Na1-x8-PAD"/>
             </connections>

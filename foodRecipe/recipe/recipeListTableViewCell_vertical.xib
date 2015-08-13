@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x9K-7X-pNV">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x9K-7X-pNV">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dBK-X1-TfF">
                         <size key="itemSize" width="50" height="50"/>
@@ -21,6 +21,12 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="x9K-7X-pNV" firstAttribute="leading" secondItem="P6K-fj-WDM" secondAttribute="leading" id="9I2-gh-phf"/>
+                <constraint firstAttribute="bottom" secondItem="x9K-7X-pNV" secondAttribute="bottom" id="LbQ-wT-8yf"/>
+                <constraint firstItem="x9K-7X-pNV" firstAttribute="top" secondItem="P6K-fj-WDM" secondAttribute="top" id="RJi-VH-i3l"/>
+                <constraint firstAttribute="trailing" secondItem="x9K-7X-pNV" secondAttribute="trailing" id="Xxh-X4-yFo"/>
+            </constraints>
             <connections>
                 <outlet property="listView" destination="x9K-7X-pNV" id="YB7-wx-yvz"/>
             </connections>

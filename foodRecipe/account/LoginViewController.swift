@@ -13,6 +13,7 @@ import FBSDKLoginKit
 class loginViewController: UIViewController {
 
 
+    @IBOutlet var btn_close: UIButton!
     @IBOutlet var btn_login_facebook: UIButton!
     @IBOutlet var btn_login_kakao: UIButton!
     @IBOutlet var btn_login_naver: UIButton!
@@ -41,6 +42,10 @@ class loginViewController: UIViewController {
         
     }
     
+    
+    @IBAction func doClose(sender: UIButton) {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 // MARK: Facebook
     @IBAction func login_facebook(sender: AnyObject) {

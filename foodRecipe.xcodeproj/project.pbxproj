@@ -17,6 +17,7 @@
 		5F5092121B4EB46D00A884EE /* foodRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5092111B4EB46D00A884EE /* foodRecipeTests.swift */; };
 		5F50921F1B4FB39800A884EE /* recipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50921E1B4FB39800A884EE /* recipeListViewController.swift */; };
 		5F5313FE1B57A9A00066D48D /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5313FD1B57A9A00066D48D /* singleton.swift */; };
+		5F81F4071B7C734F0009F0BB /* TermsAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81F4061B7C734F0009F0BB /* TermsAndPrivacyViewController.swift */; };
 		5FE6D1F81B51339600B38DFA /* myRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1F71B51339600B38DFA /* myRecipeViewController.swift */; };
 		5FE6D1FA1B5133A400B38DFA /* shopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1F91B5133A400B38DFA /* shopViewController.swift */; };
 		5FE6D1FC1B5133AD00B38DFA /* etcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1FB1B5133AD00B38DFA /* etcViewController.swift */; };
@@ -56,6 +57,7 @@
 		5F50921B1B4EED7100A884EE /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5F50921E1B4FB39800A884EE /* recipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeListViewController.swift; sourceTree = "<group>"; };
 		5F5313FD1B57A9A00066D48D /* singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
+		5F81F4061B7C734F0009F0BB /* TermsAndPrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewController.swift; sourceTree = "<group>"; };
 		5FE6D1F71B51339600B38DFA /* myRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myRecipeViewController.swift; sourceTree = "<group>"; };
 		5FE6D1F91B5133A400B38DFA /* shopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shopViewController.swift; sourceTree = "<group>"; };
 		5FE6D1FB1B5133AD00B38DFA /* etcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = etcViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				5FF21D571B686E8E0014483C /* loginViewController.swift */,
 				5FF21D591B6877D70014483C /* accountManager.swift */,
+				5F81F4061B7C734F0009F0BB /* TermsAndPrivacyViewController.swift */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				5F5091F41B4EB46C00A884EE /* Resources */,
 				63BA166FFC984E2DF9FEF4DC /* Copy Pods Resources */,
 				94C1E146679CD0F5C33BDEE7 /* Embed Pods Frameworks */,
+				5F81F4081B7C78430009F0BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,6 +321,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5F81F4081B7C78430009F0BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/tools/bump_build_number.sh \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		63BA166FFC984E2DF9FEF4DC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF21D581B686E8E0014483C /* loginViewController.swift in Sources */,
+				5F81F4071B7C734F0009F0BB /* TermsAndPrivacyViewController.swift in Sources */,
 				5FE6D1FA1B5133A400B38DFA /* shopViewController.swift in Sources */,
 				5FE6D1FC1B5133AD00B38DFA /* etcViewController.swift in Sources */,
 				5F50921F1B4FB39800A884EE /* recipeListViewController.swift in Sources */,

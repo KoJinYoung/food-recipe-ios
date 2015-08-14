@@ -9,6 +9,11 @@
 import UIKit
 import AFNetworking
 
+
+protocol recipeListDelegate {
+    func recipeLike(indexPath:NSIndexPath, finished:(liked:Bool)->Void) -> Void
+}
+
 //MARK:-
 class recipeListTableViewCell_horizontal : UITableViewCell {
     
@@ -61,10 +66,21 @@ class recipeListTableViewCell_vertical : UITableViewCell {
 
 
 //MARK:-
+
 class recipeListCell: UICollectionViewCell {
     
+    var indexPath: NSIndexPath?
+    var delegate: recipeListDelegate?
+    
     @IBOutlet var userThumbnail: UIImageView!
-    @IBOutlet var foodImageView: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var recipeCommentLabel: UILabel!
+    @IBOutlet var recipeCommentLabelHeight: NSLayoutConstraint!
+    @IBOutlet var recipeImageView: UIImageView!
+    @IBOutlet var recipeDescriptionLabel: UILabel!
+    @IBOutlet var recipeDescriptionLabelHeight: NSLayoutConstraint!
+    @IBOutlet var recipeLikeImageView: UIImageView!
+    @IBOutlet var recipeLikeButton: UIButton!
     
     override init(frame: CGRect) {
         
@@ -91,6 +107,19 @@ class recipeListCell: UICollectionViewCell {
     }
     
     func setFoodImageWithURL(url:String) {
-        self.foodImageView.setImageWithURL(NSURL(string: url))
+        self.recipeImageView.setImageWithURL(NSURL(string: url))
     }
+    
+    @IBAction func toggleRecipeLiked(sender: UIButton) {
+        
+        if self.delegate {
+            if self.indexPath {
+                
+                self.delegate?.recipeLike(indexPath, finished: { (liked) -> Void in
+                    self.recipeLikeImageView.highlighted = liked
+                })
+            }
+        }
+    }
+    
 }

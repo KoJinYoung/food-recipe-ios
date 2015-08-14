@@ -395,7 +395,7 @@
                                             <segue destination="k7n-DR-SPP" kind="show" id="Qwe-wQ-emj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eyk-Cy-c8g">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="eyk-Cy-c8g">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyk-Cy-c8g" id="rhr-tB-wVu">
@@ -509,7 +509,7 @@
         <!--View Controller-->
         <scene sceneID="YQ4-gX-YAz">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="G13-F4-0Ba" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="G13-F4-0Ba" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hda-sE-Qfr"/>
                         <viewControllerLayoutGuide type="bottom" id="bZ1-VR-q4a"/>

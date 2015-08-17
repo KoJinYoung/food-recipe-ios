@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 
-protocol recipeListDelegate {
+protocol recipeListDelegate : NSObjectProtocol {
     func recipeLike(indexPath:NSIndexPath, finished:(liked:Bool)->Void) -> Void
 }
 
@@ -106,7 +106,23 @@ class recipeListCell: UICollectionViewCell {
         layer.cornerRadius = 4
     }
     
-    func setFoodImageWithURL(url:String) {
+    func setUserThumbnailWithURL(url:String) {
+        self.userThumbnail.setImageWithURL(NSURL(string: url))
+    }
+    
+    func setUserNameLabel(name:String) {
+        self.userNameLabel.text = name
+    }
+    
+    func setRecipeCommentLabel(comment:String) {
+        self.recipeCommentLabel.text = comment
+    }
+    
+    func setRecipeDescriptionLabel(desc:String) {
+        self.recipeDescriptionLabel.text = desc
+    }
+    
+    func setRecipeImageWithURL(url:String) {
         self.recipeImageView.setImageWithURL(NSURL(string: url))
     }
     
@@ -114,10 +130,12 @@ class recipeListCell: UICollectionViewCell {
         
         if self.delegate {
             if self.indexPath {
-                
-                self.delegate?.recipeLike(indexPath, finished: { (liked) -> Void in
-                    self.recipeLikeImageView.highlighted = liked
-                })
+                if self.delegate?.respondsToSelector("recipeLike:finished:")
+                {
+                    self.delegate?.recipeLike(indexPath, finished: { (liked) -> Void in
+                        self.recipeLikeImageView.highlighted = liked
+                    })
+                }
             }
         }
     }

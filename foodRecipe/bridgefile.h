@@ -9,4 +9,6 @@
 #ifndef foodRecipe_bridgefile_h
 #define foodRecipe_bridgefile_h
 
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
+
 #endif

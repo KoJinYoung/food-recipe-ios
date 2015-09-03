@@ -53,10 +53,12 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return self.listView!.frame.size.width
+//            return self.listView!.frame.size.width
+            return 495
         }
         else if indexPath.section == 1 {
-            return self.listView!.frame.size.width
+//            return self.listView!.frame.size.width
+            return 495
         }
         else if indexPath.section == 2 {
             return ((self.listView!.frame.size.width-10-5)/2.0) * (CGFloat)((Int)(testImageURL.count/2)) + 20
@@ -131,10 +133,10 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         if collectionView.tag == listType.recommend.rawValue {
-            return CGSize(width: (self.listView!.frame.size.width-10), height: (self.listView!.frame.size.width-10))
+            return CGSize(width: (self.listView!.frame.size.width-40), height: 475)
         }
         else if collectionView.tag == listType.subscribe.rawValue {
-            return CGSize(width: (self.listView!.frame.size.width-10), height: (self.listView!.frame.size.width-10))
+            return CGSize(width: (self.listView!.frame.size.width-40), height: 475)
         }
         else if collectionView.tag == listType.list.rawValue {
             return CGSize(width: (self.listView!.frame.size.width-10-5)/2.0, height: (self.listView!.frame.size.width-10-5)/2.0)
@@ -144,7 +146,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 5
+        return 20
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
@@ -152,7 +154,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
+        return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -160,8 +162,8 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
         let cell : recipeListCell = collectionView.dequeueReusableCellWithReuseIdentifier("recipeListCell", forIndexPath: indexPath) as! recipeListCell
         
 //        cell.foodImageView. = UIColor.blackColor()
-        cell.plainShadow()
-        cell.setFoodImageWithURL(self.testImageURL[indexPath.row])
+//        cell.plainShadow()
+        cell.setRecipeImageWithURL(self.testImageURL[indexPath.row])
         
         return cell
     }

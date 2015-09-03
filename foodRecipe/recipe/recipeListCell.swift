@@ -110,15 +110,15 @@ class recipeListCell: UICollectionViewCell {
         self.userThumbnail.setImageWithURL(NSURL(string: url))
     }
     
-    func setUserNameLabel(name:String) {
+    func setUserName(name:String) {
         self.userNameLabel.text = name
     }
     
-    func setRecipeCommentLabel(comment:String) {
+    func setRecipeComment(comment:String) {
         self.recipeCommentLabel.text = comment
     }
     
-    func setRecipeDescriptionLabel(desc:String) {
+    func setRecipeDescription(desc:String) {
         self.recipeDescriptionLabel.text = desc
     }
     
@@ -128,11 +128,11 @@ class recipeListCell: UICollectionViewCell {
     
     @IBAction func toggleRecipeLiked(sender: UIButton) {
         
-        if self.delegate {
-            if self.indexPath {
-                if self.delegate?.respondsToSelector("recipeLike:finished:")
+        if (self.delegate != nil) {
+            if (self.indexPath != nil) {
+                if (self.delegate?.respondsToSelector("recipeLike:finished:") != nil)
                 {
-                    self.delegate?.recipeLike(indexPath, finished: { (liked) -> Void in
+                    self.delegate?.recipeLike(indexPath!, finished: { (liked) -> Void in
                         self.recipeLikeImageView.highlighted = liked
                     })
                 }

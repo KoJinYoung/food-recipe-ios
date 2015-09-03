@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKLoginKit
 
-
 class loginViewController: UIViewController {
 
 
@@ -23,13 +22,10 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
         
         // facebook
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            self.btn_login_facebook.setTitle("Facebook Logout", forState: UIControlState.Normal)
-        }
-        else {
-            self.btn_login_facebook.setTitle("Facebook Login", forState: UIControlState.Normal)
-        }
+        self.fbLoginButtonInit()
+        
+        // Kakao
+        self.koLoginButtonInit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +44,16 @@ class loginViewController: UIViewController {
     }
     
 // MARK: Facebook
+    func fbLoginButtonInit() {
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            self.btn_login_facebook.setTitle("Facebook Logout", forState: UIControlState.Normal)
+        }
+        else {
+            self.btn_login_facebook.setTitle("Facebook Login", forState: UIControlState.Normal)
+        }
+    }
+    
     @IBAction func login_facebook(sender: AnyObject) {
         
         var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
@@ -78,13 +84,44 @@ class loginViewController: UIViewController {
         if((FBSDKAccessToken.currentAccessToken()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if (error == nil){
-                    println(result)
+                    var fbid : String = result["id"] as! String
+                    self.loginByFacebook(fbid)
                 }
             })
         }
     }
     
+    func loginByFacebook(fbid : String) {
+        
+    }
+    
 // MARK: Kakao
+    func koLoginButtonInit() {
+        
+    }
+    
+    @IBAction func invokeLoginWithTarget(sender: UIButton) {
+        
+        KOSession.sharedSession().close()
+        
+        KOSession.sharedSession().openWithCompletionHandler({ (error) -> Void in
+            
+            if (KOSession.sharedSession().isOpen()) {
+                
+                KOSessionTask.meTaskWithCompletionHandler({ (result, error) -> Void in
+                    if (result != nil) {
+                        var user : KOUser = result as! KOUser
+                        println(user.ID)
+                    }
+                })
+                
+            } else {
+                
+            }
+            
+        }, authParams:nil, authTypes: [KOAuthType.Talk.rawValue])
+        
+    }
     
 // MARK: Naver
     

@@ -13,7 +13,12 @@ class myRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if(accountManager.hasToken()) {
+            
+        }
+        else {
+            self.openLoginPage()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,12 +28,6 @@ class myRecipeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if(accountManager.hasToken()) {
-            
-        }
-        else {
-            
-        }
     }
     
     override func viewWillAppear(animated: Bool) {

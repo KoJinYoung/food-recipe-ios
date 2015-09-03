@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        
+        if (KOSession.isKakaoAccountLoginCallback(url)) {
+            return KOSession.handleOpenURL(url)
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(
             application,
             openURL: url,
@@ -47,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         FBSDKAppEvents.activateApp()
+        KOSession.handleDidBecomeActive()
     }
 
     func applicationWillTerminate(application: UIApplication) {

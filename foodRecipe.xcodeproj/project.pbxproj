@@ -19,6 +19,7 @@
 		5F50921F1B4FB39800A884EE /* recipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50921E1B4FB39800A884EE /* recipeListViewController.swift */; };
 		5F5313FE1B57A9A00066D48D /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5313FD1B57A9A00066D48D /* singleton.swift */; };
 		5F81F4071B7C734F0009F0BB /* TermsAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81F4061B7C734F0009F0BB /* TermsAndPrivacyViewController.swift */; };
+		5F9A49BC1B99FC35007AEA8F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A49BB1B99FC35007AEA8F /* UIColor+Hex.swift */; };
 		5FE6D1F81B51339600B38DFA /* myRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1F71B51339600B38DFA /* myRecipeViewController.swift */; };
 		5FE6D1FA1B5133A400B38DFA /* shopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1F91B5133A400B38DFA /* shopViewController.swift */; };
 		5FE6D1FC1B5133AD00B38DFA /* etcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6D1FB1B5133AD00B38DFA /* etcViewController.swift */; };
@@ -60,6 +61,7 @@
 		5F50921E1B4FB39800A884EE /* recipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeListViewController.swift; sourceTree = "<group>"; };
 		5F5313FD1B57A9A00066D48D /* singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
 		5F81F4061B7C734F0009F0BB /* TermsAndPrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		5F9A49BB1B99FC35007AEA8F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		5FE6D1F71B51339600B38DFA /* myRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myRecipeViewController.swift; sourceTree = "<group>"; };
 		5FE6D1F91B5133A400B38DFA /* shopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shopViewController.swift; sourceTree = "<group>"; };
 		5FE6D1FB1B5133AD00B38DFA /* etcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = etcViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		5F5091F81B4EB46C00A884EE /* foodRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				5F9A49BA1B99FBCF007AEA8F /* common */,
 				5F9CEC111B5E278D0081C75C /* account */,
 				5F50921D1B4FB37500A884EE /* recipe */,
 				5FE6D1F51B51334C00B38DFA /* myRecipe */,
@@ -169,6 +172,14 @@
 				5F3D02D01B7A28E200EF1BFA /* recipeListTableViewCell_vertical.xib */,
 			);
 			path = recipe;
+			sourceTree = "<group>";
+		};
+		5F9A49BA1B99FBCF007AEA8F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				5F9A49BB1B99FC35007AEA8F /* UIColor+Hex.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		5F9CEC111B5E278D0081C75C /* account */ = {
@@ -399,6 +410,7 @@
 				5FE6D2021B5152B900B38DFA /* detailRecipeViewController.swift in Sources */,
 				5FF21D5A1B6877D70014483C /* accountManager.swift in Sources */,
 				5FF21D561B686B6D0014483C /* storyboard.swift in Sources */,
+				5F9A49BC1B99FC35007AEA8F /* UIColor+Hex.swift in Sources */,
 				5F5313FE1B57A9A00066D48D /* singleton.swift in Sources */,
 				5FE6D1F81B51339600B38DFA /* myRecipeViewController.swift in Sources */,
 				5FE6D2001B513D7900B38DFA /* recipeListCell.swift in Sources */,

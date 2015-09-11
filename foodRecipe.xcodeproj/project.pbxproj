@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0285711BA1E59E00A95AA9 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285701BA1E59E00A95AA9 /* Recipe.m */; };
+		5F0285741BA306E700A95AA9 /* RecipeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285731BA306E700A95AA9 /* RecipeAPI.m */; };
+		5F0285771BA3075200A95AA9 /* MakcipeSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285761BA3075200A95AA9 /* MakcipeSDK.m */; };
+		5F02857A1BA307CE00A95AA9 /* MakcipeAPISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285791BA307CE00A95AA9 /* MakcipeAPISession.m */; };
+		5F02857D1BA3080A00A95AA9 /* MakcipeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02857C1BA3080A00A95AA9 /* MakcipeAPI.m */; };
+		5F0285861BA314C400A95AA9 /* MakcipeAPIRecipeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285851BA314C400A95AA9 /* MakcipeAPIRecipeService.m */; };
 		5F2C03DC1B97F0CD00C2AEEB /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2C03DB1B97F0CD00C2AEEB /* KakaoOpenSDK.framework */; };
 		5F34B6471B6A4BC2001BAF7D /* recipeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F34B6461B6A4BC2001BAF7D /* recipeListCell.xib */; };
 		5F3D02CF1B7A28B700EF1BFA /* recipeListTableViewCell_horizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D02CE1B7A28B700EF1BFA /* recipeListTableViewCell_horizontal.xib */; };
@@ -44,6 +50,20 @@
 /* Begin PBXFileReference section */
 		407502534CE06E3792B761FE /* Pods-foodRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodRecipe/Pods-foodRecipe.debug.xcconfig"; sourceTree = "<group>"; };
 		5952207C87BBDDC5B647D7E2 /* Pods-foodRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-foodRecipe/Pods-foodRecipe.release.xcconfig"; sourceTree = "<group>"; };
+		5F02856F1BA1E59E00A95AA9 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		5F0285701BA1E59E00A95AA9 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		5F0285721BA306E700A95AA9 /* RecipeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeAPI.h; sourceTree = "<group>"; };
+		5F0285731BA306E700A95AA9 /* RecipeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeAPI.m; sourceTree = "<group>"; };
+		5F0285751BA3074100A95AA9 /* MakcipeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeSDK.h; sourceTree = "<group>"; };
+		5F0285761BA3075200A95AA9 /* MakcipeSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeSDK.m; sourceTree = "<group>"; };
+		5F0285781BA307CE00A95AA9 /* MakcipeAPISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPISession.h; sourceTree = "<group>"; };
+		5F0285791BA307CE00A95AA9 /* MakcipeAPISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeAPISession.m; sourceTree = "<group>"; };
+		5F02857B1BA3080A00A95AA9 /* MakcipeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPI.h; sourceTree = "<group>"; };
+		5F02857C1BA3080A00A95AA9 /* MakcipeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeAPI.m; sourceTree = "<group>"; };
+		5F02857E1BA308A900A95AA9 /* MakcipeSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeSVC.h; sourceTree = "<group>"; };
+		5F02857F1BA30F0400A95AA9 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		5F0285841BA314C400A95AA9 /* MakcipeAPIRecipeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPIRecipeService.h; sourceTree = "<group>"; };
+		5F0285851BA314C400A95AA9 /* MakcipeAPIRecipeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeAPIRecipeService.m; sourceTree = "<group>"; };
 		5F2C03DB1B97F0CD00C2AEEB /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Frameworks/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		5F34B6461B6A4BC2001BAF7D /* recipeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell.xib; sourceTree = "<group>"; };
 		5F3D02CE1B7A28B700EF1BFA /* recipeListTableViewCell_horizontal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListTableViewCell_horizontal.xib; sourceTree = "<group>"; };
@@ -94,9 +114,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F02856D1BA1E58000A95AA9 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				5F0285831BA314B000A95AA9 /* service */,
+				5F02856E1BA1E58000A95AA9 /* thrift */,
+				5F0285751BA3074100A95AA9 /* MakcipeSDK.h */,
+				5F0285761BA3075200A95AA9 /* MakcipeSDK.m */,
+				5F0285781BA307CE00A95AA9 /* MakcipeAPISession.h */,
+				5F0285791BA307CE00A95AA9 /* MakcipeAPISession.m */,
+				5F02857B1BA3080A00A95AA9 /* MakcipeAPI.h */,
+				5F02857C1BA3080A00A95AA9 /* MakcipeAPI.m */,
+				5F02857E1BA308A900A95AA9 /* MakcipeSVC.h */,
+				5F02857F1BA30F0400A95AA9 /* Server.h */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		5F02856E1BA1E58000A95AA9 /* thrift */ = {
+			isa = PBXGroup;
+			children = (
+				5F0285721BA306E700A95AA9 /* RecipeAPI.h */,
+				5F0285731BA306E700A95AA9 /* RecipeAPI.m */,
+				5F02856F1BA1E59E00A95AA9 /* Recipe.h */,
+				5F0285701BA1E59E00A95AA9 /* Recipe.m */,
+			);
+			path = thrift;
+			sourceTree = "<group>";
+		};
+		5F0285831BA314B000A95AA9 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				5F0285841BA314C400A95AA9 /* MakcipeAPIRecipeService.h */,
+				5F0285851BA314C400A95AA9 /* MakcipeAPIRecipeService.m */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		5F5091ED1B4EB46C00A884EE = {
 			isa = PBXGroup;
 			children = (
+				5F02856D1BA1E58000A95AA9 /* api */,
 				5F5091F81B4EB46C00A884EE /* foodRecipe */,
 				5F50920E1B4EB46D00A884EE /* foodRecipeTests */,
 				5F5091F71B4EB46C00A884EE /* Products */,
@@ -402,16 +460,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF21D581B686E8E0014483C /* loginViewController.swift in Sources */,
+				5F0285711BA1E59E00A95AA9 /* Recipe.m in Sources */,
 				5F81F4071B7C734F0009F0BB /* TermsAndPrivacyViewController.swift in Sources */,
+				5F0285771BA3075200A95AA9 /* MakcipeSDK.m in Sources */,
 				5FE6D1FA1B5133A400B38DFA /* shopViewController.swift in Sources */,
+				5F0285861BA314C400A95AA9 /* MakcipeAPIRecipeService.m in Sources */,
 				5FE6D1FC1B5133AD00B38DFA /* etcViewController.swift in Sources */,
 				5F50921F1B4FB39800A884EE /* recipeListViewController.swift in Sources */,
+				5F02857D1BA3080A00A95AA9 /* MakcipeAPI.m in Sources */,
 				5F5091FC1B4EB46C00A884EE /* AppDelegate.swift in Sources */,
 				5FE6D2021B5152B900B38DFA /* detailRecipeViewController.swift in Sources */,
+				5F02857A1BA307CE00A95AA9 /* MakcipeAPISession.m in Sources */,
 				5FF21D5A1B6877D70014483C /* accountManager.swift in Sources */,
 				5FF21D561B686B6D0014483C /* storyboard.swift in Sources */,
 				5F9A49BC1B99FC35007AEA8F /* UIColor+Hex.swift in Sources */,
 				5F5313FE1B57A9A00066D48D /* singleton.swift in Sources */,
+				5F0285741BA306E700A95AA9 /* RecipeAPI.m in Sources */,
 				5FE6D1F81B51339600B38DFA /* myRecipeViewController.swift in Sources */,
 				5FE6D2001B513D7900B38DFA /* recipeListCell.swift in Sources */,
 			);
@@ -550,6 +614,10 @@
 					"$(PROJECT_DIR)/foodRecipe/Frameworks",
 					"$(PROJECT_DIR)/Frameworks",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = foodRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -573,6 +641,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = foodRecipe/bridgefile.h;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/Headers/Private/thrift/";
 			};
 			name = Debug;
 		};
@@ -588,6 +657,10 @@
 					"$(PROJECT_DIR)/foodRecipe/Frameworks",
 					"$(PROJECT_DIR)/Frameworks",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = foodRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -611,6 +684,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = foodRecipe/bridgefile.h;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/Headers/Private/thrift/";
 			};
 			name = Release;
 		};

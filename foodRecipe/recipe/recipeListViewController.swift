@@ -35,6 +35,7 @@ class recipeListViewController: UIViewController, UICollectionViewDataSource, UI
         let verticalNib = UINib(nibName: "recipeListTableViewCell_vertical", bundle: nil)
         self.listView?.registerNib(horizontalNib, forCellReuseIdentifier: "recipeListTableViewCell_horizontal")
         self.listView?.registerNib(verticalNib, forCellReuseIdentifier: "recipeListTableViewCell_vertical")
+        
     }
     
     override func didReceiveMemoryWarning() {

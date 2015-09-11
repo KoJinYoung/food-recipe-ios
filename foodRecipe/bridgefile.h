@@ -11,4 +11,6 @@
 
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
+#import "MakcipeSDK.h"
+
 #endif

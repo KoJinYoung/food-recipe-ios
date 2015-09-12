@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>ko_KR</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.MakSSe.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -19,24 +35,23 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>ko_KR</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.MakSSe.$(PRODUCT_NAME:rfc1034identifier)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>8</string>
+	<key>FacebookAppID</key>
+	<string>1482629492029369</string>
+	<key>FacebookDisplayName</key>
+	<string>막쓰는 레시피</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>08167639a537225a73807a311505284d</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao08167639a537225a73807a311505284d</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-4.5.0</string>
+		<string>kakaostory-2.9.0</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -53,11 +68,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>1482629492029369</string>
-	<key>FacebookDisplayName</key>
-	<string>막쓰는 레시피</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>08167639a537225a73807a311505284d</string>
 </dict>
 </plist>

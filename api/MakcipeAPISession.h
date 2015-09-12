@@ -23,7 +23,6 @@
 @property (nonatomic, readonly) dispatch_queue_t queue;
 
 @property (nonatomic, strong) NSArray *Servers;
-@property (nonatomic, strong) NSString *devServer;
 
 + (void)setSharedSessionUserAgent:(NSString *)userAgent;
 + (MakcipeAPISession*)sharedSession;

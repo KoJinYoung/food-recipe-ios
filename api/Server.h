@@ -10,12 +10,9 @@
 #define foodRecipe_Server_h
 
 #define MAKCIPE_SERVER_HOST               @"http://api.maksse.com"
-#define MAKCIPE_SERVER_HOST_DEV           @"http://10.0.174.25"
-#define MAKCIPE_SERVER_HOST_PORT          @":9090"
-#define MAKCIPE_SERVER_HOST_PORT_DEV      @":9090"
-
-#define MAKCIPE_SERVICE_SERVER_HOST       [NSString stringWithFormat:@"%@%@", MAKCIPE_SERVER_HOST, MAKCIPE_SERVER_HOST_PORT]
-#define MAKCIPE_SERVICE_SERVER_HOST_DEV   [NSString stringWithFormat:@"%@%@", MAKCIPE_SERVER_HOST_DEV, MAKCIPE_SERVER_HOST_PORT_DEV]
+#define MAKCIPE_SERVER_HOST_DEV           @"localhost"
+#define MAKCIPE_SERVER_HOST_PORT          9090
+#define MAKCIPE_SERVER_HOST_PORT_DEV      9090
 
 #define MAKCIPE_IMAGE_SERVLET_URL         [NSString stringWithFormat:@"%@%@/api/image", MAKCIPE_SERVER_HOST, MAKCIPE_SERVER_HOST_PORT]
 #define MAKCIPE_IMAGE_SERVLET_URL_DEV     [NSString stringWithFormat:@"%@%@/api/image", MAKCIPE_SERVER_HOST_DEV, MAKCIPE_SERVER_HOST_PORT_DEV]

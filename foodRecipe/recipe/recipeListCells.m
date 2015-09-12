@@ -6,7 +6,7 @@
 //  Copyright (c) 2015년 Jin-young Ko. All rights reserved.
 //
 
-#import "recipeListTableViewCell_horizontal.h"
+#import "recipeListCells.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @implementation recipeListTableViewCell_horizontal

@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="YhE-eS-WBj">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" id="xqr-tD-m5k" customClass="loginViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="xqr-tD-m5k" customClass="loginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TLL-Lc-xsW"/>
                         <viewControllerLayoutGuide type="bottom" id="lca-L4-JvX"/>
@@ -136,7 +136,7 @@
         <!--RECIPE-->
         <scene sceneID="5Ka-vZ-6Ot">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Jxg-f9-1hT" customClass="recipeListViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Jxg-f9-1hT" customClass="recipeListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DQ6-pz-Y0U"/>
                         <viewControllerLayoutGuide type="bottom" id="CiP-Lx-iDt"/>
@@ -236,7 +236,7 @@
         <!--My Recipe View Controller-->
         <scene sceneID="rLZ-uw-Bo8">
             <objects>
-                <viewController id="9pQ-Aw-hQa" customClass="myRecipeViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pQ-Aw-hQa" customClass="myRecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z3K-Gb-SDe"/>
                         <viewControllerLayoutGuide type="bottom" id="MGy-Hq-tqT"/>
@@ -279,7 +279,7 @@
         <!--Shop View Controller-->
         <scene sceneID="Vcm-aV-0Io">
             <objects>
-                <viewController id="eRk-Tv-jyg" customClass="shopViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eRk-Tv-jyg" customClass="shopViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xiN-fo-0g0"/>
                         <viewControllerLayoutGuide type="bottom" id="ioG-F6-E8f"/>
@@ -328,7 +328,7 @@
         <!--Etc View Controller-->
         <scene sceneID="luw-Ft-Z8H">
             <objects>
-                <tableViewController id="uig-4w-gLb" customClass="etcViewController" customModule="foodRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uig-4w-gLb" customClass="etcViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qk6-An-70T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

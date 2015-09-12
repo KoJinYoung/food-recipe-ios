@@ -8,9 +8,6 @@
 
 #import "Server.h"
 
-#define MAKCIPESERVICE_SERVER_HOST                  MAKCIPE_SERVICE_SERVER_HOST
-#define MAKCIPESERVICE_SERVER_HOST_DEV              MAKCIPE_SERVICE_SERVER_HOST_DEV
-
 #define MAKCIPESERVICE_RECIPE_PATH                  @""
 
 #define RecipeSvcTimeoutInterval                    60.0f
@@ -18,11 +15,11 @@
 
 #import "MakcipeAPISession.h"
 #import <thrift/THTTPClient.h>
+#import <thrift/TSocketClient.h>
 #import <thrift/TBinaryProtocol.h>
 
 @implementation MakcipeAPISession
 @synthesize authenticationToken = _authenticationToken;
-@synthesize devServer = _devServer;
 
 - (id)init {
     
@@ -72,30 +69,18 @@
     return (self.authenticationToken != nil);
 }
 
-- (NSString *)devServer
-{
-    self.devServer = MAKCIPESERVICE_SERVER_HOST_DEV;
-    return _devServer;
-}
-
-- (void)setDevServer:(NSString *)devServer
-{
-    if (_devServer != devServer) {
-        _devServer = devServer;
-    }
-}
-
 - (NSString *)getHostName
 {
     NSString *hostName;
     
-#ifdef CREAM_SERVER_REAL
-    hostName = MAKCIPESERVICE_SERVER_HOST;
-#else
-    hostName = self.devServer;
-#endif
+    hostName = MAKCIPE_SERVER_HOST_DEV;
     
     return hostName;
+}
+
+- (int)getPort
+{
+    return MAKCIPE_SERVER_HOST_PORT_DEV;
 }
 
 - (NSString *)recipeSvcUrl
@@ -105,9 +90,10 @@
 
 - (makcipeAPIRecipeAPIClient *)recipeService
 {
-    NSURL *url = [NSURL URLWithString:self.recipeSvcUrl];
-    THTTPClient *transport = [[THTTPClient alloc] initWithURL:url userAgent:self.userAgentString timeout:self.recipeSvcTimeoutInterval];
-    TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transport];
+//    NSURL *url = [NSURL URLWithString:self.recipeSvcUrl];
+//    THTTPClient *transport = [[THTTPClient alloc] initWithURL:url userAgent:self.userAgentString timeout:self.recipeSvcTimeoutInterval];
+    TSocketClient *transportSocket = [[TSocketClient alloc] initWithHostname:[self getHostName] port:[self getPort]];
+    TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transportSocket];
     return [[makcipeAPIRecipeAPIClient alloc] initWithProtocol:protocol];
 }
 

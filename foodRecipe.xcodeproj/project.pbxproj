@@ -10,7 +10,6 @@
 		24B8E565D29DCE3F8417790F /* libPods-foodRecipe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343245FF7D7D32CE279CBE8C /* libPods-foodRecipe.a */; };
 		5F0285961BA3469600A95AA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285951BA3469600A95AA9 /* main.m */; };
 		5F0285991BA3469600A95AA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285981BA3469600A95AA9 /* AppDelegate.m */; };
-		5F02859F1BA3469600A95AA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F02859D1BA3469600A95AA9 /* Main.storyboard */; };
 		5F0285A11BA3469600A95AA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285A01BA3469600A95AA9 /* Images.xcassets */; };
 		5F0285A41BA3469600A95AA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285A21BA3469600A95AA9 /* LaunchScreen.xib */; };
 		5F0285B01BA3469600A95AA9 /* foodRecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285AF1BA3469600A95AA9 /* foodRecipeTests.m */; };
@@ -28,12 +27,13 @@
 		5F0285EA1BA46F7300A95AA9 /* recipeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285E71BA46F7300A95AA9 /* recipeListCell.xib */; };
 		5F0285EB1BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285E81BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib */; };
 		5F0285EC1BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285E91BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib */; };
-		5F0285F11BA475A900A95AA9 /* recipeListTableViewCell_horizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285F01BA475A900A95AA9 /* recipeListTableViewCell_horizontal.m */; };
+		5F0285F11BA475A900A95AA9 /* recipeListCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285F01BA475A900A95AA9 /* recipeListCells.m */; };
 		5F0285F41BA4924D00A95AA9 /* detailRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */; };
 		5F0285FE1BA4931400A95AA9 /* myRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285FD1BA4931400A95AA9 /* myRecipeViewController.m */; };
 		5F0286061BA493D100A95AA9 /* storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286051BA493D100A95AA9 /* storyboard.m */; };
 		5F0286091BA4953700A95AA9 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286081BA4953700A95AA9 /* shopViewController.m */; };
 		5F02860C1BA4955400A95AA9 /* etcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02860B1BA4955400A95AA9 /* etcViewController.m */; };
+		5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F02859D1BA3469600A95AA9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +85,8 @@
 		5F0285E71BA46F7300A95AA9 /* recipeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell.xib; sourceTree = "<group>"; };
 		5F0285E81BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListTableViewCell_horizontal.xib; sourceTree = "<group>"; };
 		5F0285E91BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListTableViewCell_vertical.xib; sourceTree = "<group>"; };
-		5F0285EF1BA475A800A95AA9 /* recipeListTableViewCell_horizontal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeListTableViewCell_horizontal.h; sourceTree = "<group>"; };
-		5F0285F01BA475A900A95AA9 /* recipeListTableViewCell_horizontal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recipeListTableViewCell_horizontal.m; sourceTree = "<group>"; };
+		5F0285EF1BA475A800A95AA9 /* recipeListCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeListCells.h; sourceTree = "<group>"; };
+		5F0285F01BA475A900A95AA9 /* recipeListCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recipeListCells.m; sourceTree = "<group>"; };
 		5F0285F21BA4924D00A95AA9 /* detailRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailRecipeViewController.h; sourceTree = "<group>"; };
 		5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailRecipeViewController.m; sourceTree = "<group>"; };
 		5F0285FC1BA4931400A95AA9 /* myRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myRecipeViewController.h; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */,
-				5F0285F01BA475A900A95AA9 /* recipeListTableViewCell_horizontal.m */,
+				5F0285F01BA475A900A95AA9 /* recipeListCells.m */,
 				5F0285E41BA42A6700A95AA9 /* recipeListViewController.m */,
 			);
 			name = source;
@@ -322,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0285F21BA4924D00A95AA9 /* detailRecipeViewController.h */,
-				5F0285EF1BA475A800A95AA9 /* recipeListTableViewCell_horizontal.h */,
+				5F0285EF1BA475A800A95AA9 /* recipeListCells.h */,
 				5F0285E31BA42A6700A95AA9 /* recipeListViewController.h */,
 			);
 			name = header;
@@ -496,8 +496,8 @@
 			files = (
 				5F0285EB1BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib in Resources */,
 				5F0285EC1BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib in Resources */,
-				5F02859F1BA3469600A95AA9 /* Main.storyboard in Resources */,
 				5F0285A41BA3469600A95AA9 /* LaunchScreen.xib in Resources */,
+				5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */,
 				5F0285A11BA3469600A95AA9 /* Images.xcassets in Resources */,
 				5F0285EA1BA46F7300A95AA9 /* recipeListCell.xib in Resources */,
 			);
@@ -577,7 +577,7 @@
 				5F0285E11BA429B600A95AA9 /* TermsAndPrivacyViewController.m in Sources */,
 				5F0285CF1BA3483D00A95AA9 /* RecipeAPI.m in Sources */,
 				5F0285F41BA4924D00A95AA9 /* detailRecipeViewController.m in Sources */,
-				5F0285F11BA475A900A95AA9 /* recipeListTableViewCell_horizontal.m in Sources */,
+				5F0285F11BA475A900A95AA9 /* recipeListCells.m in Sources */,
 				5F0285CA1BA3483D00A95AA9 /* MakcipeAPI.m in Sources */,
 				5F0285DB1BA34F0600A95AA9 /* loginViewController.m in Sources */,
 				5F0285CC1BA3483D00A95AA9 /* MakcipeSDK.m in Sources */,

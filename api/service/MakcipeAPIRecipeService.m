@@ -16,17 +16,6 @@
     return recipeService;
 }
 
-- (instancetype)init
-{
-    self = [super initWithSession:[MakcipeAPISession sharedSession]];
-    if (self) {
-        
-    }
-    
-    return self;
-    
-}
-
 - (id)initWithSession:(MakcipeAPISession *)session
 {
     self = [super initWithSession:session];

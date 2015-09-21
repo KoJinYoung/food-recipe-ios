@@ -8,15 +8,18 @@
 
 #import "Server.h"
 
-#define MAKCIPESERVICE_RECIPE_PATH                  @""
+#define MAKCIPESERVICE_RECIPE_NAME                  @"RecipeAPI"
+#define MAKCIPESERVICE_USER_NAME                    @"UserAPI"
 
 #define RecipeSvcTimeoutInterval                    60.0f
+#define UserSvcTimeoutInterval                    60.0f
 
 
 #import "MakcipeAPISession.h"
 #import <thrift/THTTPClient.h>
 #import <thrift/TSocketClient.h>
 #import <thrift/TBinaryProtocol.h>
+#import <thrift/TMultiplexedProtocol.h>
 
 @implementation MakcipeAPISession
 @synthesize authenticationToken = _authenticationToken;
@@ -26,13 +29,14 @@
     if (self = [super init]) {
         _userAgentString = nil;
         _recipeSvcTimeoutInterval = RecipeSvcTimeoutInterval;
+        _userSvcTimeoutInterval = UserSvcTimeoutInterval;
 
         _isAuthExpired = NO;
         _authenticationToken = nil;
         
         _queue = dispatch_queue_create("", nil);
         
-        _Servers = [[NSArray alloc] initWithObjects:nil];
+        _Servers = [[NSArray alloc] init];
     }
     return self;
 }
@@ -71,30 +75,28 @@
 
 - (NSString *)getHostName
 {
-    NSString *hostName;
-    
-    hostName = MAKCIPE_SERVER_HOST_DEV;
-    
-    return hostName;
+    return MAKCIPE_SERVER_HOST;
 }
 
 - (int)getPort
 {
-    return MAKCIPE_SERVER_HOST_PORT_DEV;
-}
-
-- (NSString *)recipeSvcUrl
-{
-    return [[self getHostName] stringByAppendingString:MAKCIPESERVICE_RECIPE_PATH];
+    return MAKCIPE_SERVER_HOST_PORT;
 }
 
 - (makcipeAPIRecipeAPIClient *)recipeService
 {
-//    NSURL *url = [NSURL URLWithString:self.recipeSvcUrl];
-//    THTTPClient *transport = [[THTTPClient alloc] initWithURL:url userAgent:self.userAgentString timeout:self.recipeSvcTimeoutInterval];
-    TSocketClient *transportSocket = [[TSocketClient alloc] initWithHostname:[self getHostName] port:[self getPort]];
-    TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transportSocket];
-    return [[makcipeAPIRecipeAPIClient alloc] initWithProtocol:protocol];
+    TSocketClient *transport = [[TSocketClient alloc] initWithHostname:[self getHostName] port:[self getPort]];
+    TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transport];
+    TMultiplexedProtocol *muxProtocol = [[TMultiplexedProtocol alloc] initWithProtocol:protocol serviceName:MAKCIPESERVICE_RECIPE_NAME];
+    return [[makcipeAPIRecipeAPIClient alloc] initWithProtocol:muxProtocol];
+}
+
+- (makcipeAPIUserAPIClient *)userService
+{
+    TSocketClient *transport = [[TSocketClient alloc] initWithHostname:[self getHostName] port:[self getPort]];
+    TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transport];
+    TMultiplexedProtocol *muxProtocol = [[TMultiplexedProtocol alloc] initWithProtocol:protocol serviceName:MAKCIPESERVICE_USER_NAME];
+    return [[makcipeAPIUserAPIClient alloc] initWithProtocol:muxProtocol];
 }
 
 @end

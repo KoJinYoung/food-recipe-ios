@@ -9,6 +9,7 @@
 #import "MakcipeAPISession.h"
 
 #import "MakcipeAPIRecipeService.h"
+#import "MakcipeAPIUserService.h"
 
 // For other application-level error codes
 typedef enum {

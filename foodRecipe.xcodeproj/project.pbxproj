@@ -33,7 +33,10 @@
 		5F0286061BA493D100A95AA9 /* storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286051BA493D100A95AA9 /* storyboard.m */; };
 		5F0286091BA4953700A95AA9 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286081BA4953700A95AA9 /* shopViewController.m */; };
 		5F02860C1BA4955400A95AA9 /* etcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02860B1BA4955400A95AA9 /* etcViewController.m */; };
+		5F3950BF1BAF4DC000F06274 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BC1BAF4DC000F06274 /* UserAPI.m */; settings = {ASSET_TAGS = (); }; };
+		5F3950C01BAF4DC000F06274 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BE1BAF4DC000F06274 /* UserInfo.m */; settings = {ASSET_TAGS = (); }; };
 		5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F02859D1BA3469600A95AA9 /* Main.storyboard */; };
+		5FB4A7741BB010C700CF7724 /* MakcipeAPIUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB4A7731BB010C700CF7724 /* MakcipeAPIUserService.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,12 @@
 		5F0286081BA4953700A95AA9 /* shopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopViewController.m; sourceTree = "<group>"; };
 		5F02860A1BA4955400A95AA9 /* etcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = etcViewController.h; sourceTree = "<group>"; };
 		5F02860B1BA4955400A95AA9 /* etcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = etcViewController.m; sourceTree = "<group>"; };
+		5F3950BB1BAF4DC000F06274 /* UserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPI.h; sourceTree = "<group>"; };
+		5F3950BC1BAF4DC000F06274 /* UserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPI.m; sourceTree = "<group>"; };
+		5F3950BD1BAF4DC000F06274 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		5F3950BE1BAF4DC000F06274 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		5FB4A7721BB010C700CF7724 /* MakcipeAPIUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPIUserService.h; sourceTree = "<group>"; };
+		5FB4A7731BB010C700CF7724 /* MakcipeAPIUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeAPIUserService.m; sourceTree = "<group>"; };
 		B8C6272F9435C401A97C597F /* Pods-foodRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodRecipe/Pods-foodRecipe.debug.xcconfig"; sourceTree = "<group>"; };
 		F3F00AC9EFE8225EA5F8D7DA /* Pods-foodRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-foodRecipe/Pods-foodRecipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +227,8 @@
 			children = (
 				5F0285C31BA3483D00A95AA9 /* MakcipeAPIRecipeService.h */,
 				5F0285C41BA3483D00A95AA9 /* MakcipeAPIRecipeService.m */,
+				5FB4A7721BB010C700CF7724 /* MakcipeAPIUserService.h */,
+				5FB4A7731BB010C700CF7724 /* MakcipeAPIUserService.m */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -229,6 +240,10 @@
 				5F0285C71BA3483D00A95AA9 /* Recipe.m */,
 				5F0285C81BA3483D00A95AA9 /* RecipeAPI.h */,
 				5F0285C91BA3483D00A95AA9 /* RecipeAPI.m */,
+				5F3950BB1BAF4DC000F06274 /* UserAPI.h */,
+				5F3950BC1BAF4DC000F06274 /* UserAPI.m */,
+				5F3950BD1BAF4DC000F06274 /* UserInfo.h */,
+				5F3950BE1BAF4DC000F06274 /* UserInfo.m */,
 			);
 			path = thrift;
 			sourceTree = "<group>";
@@ -571,6 +586,8 @@
 				5F0285CE1BA3483D00A95AA9 /* Recipe.m in Sources */,
 				5F0286091BA4953700A95AA9 /* shopViewController.m in Sources */,
 				5F0285E51BA42A6700A95AA9 /* recipeListViewController.m in Sources */,
+				5F3950C01BAF4DC000F06274 /* UserInfo.m in Sources */,
+				5F3950BF1BAF4DC000F06274 /* UserAPI.m in Sources */,
 				5F0285CB1BA3483D00A95AA9 /* MakcipeAPISession.m in Sources */,
 				5F02860C1BA4955400A95AA9 /* etcViewController.m in Sources */,
 				5F0285961BA3469600A95AA9 /* main.m in Sources */,
@@ -581,6 +598,7 @@
 				5F0285CA1BA3483D00A95AA9 /* MakcipeAPI.m in Sources */,
 				5F0285DB1BA34F0600A95AA9 /* loginViewController.m in Sources */,
 				5F0285CC1BA3483D00A95AA9 /* MakcipeSDK.m in Sources */,
+				5FB4A7741BB010C700CF7724 /* MakcipeAPIUserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

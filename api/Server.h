@@ -9,7 +9,7 @@
 #ifndef foodRecipe_Server_h
 #define foodRecipe_Server_h
 
-#define MAKCIPE_SERVER_HOST               @"http://api.maksse.com"
+#define MAKCIPE_SERVER_HOST               @"dev.makcipe.com"
 #define MAKCIPE_SERVER_HOST_DEV           @"localhost"
 #define MAKCIPE_SERVER_HOST_PORT          9090
 #define MAKCIPE_SERVER_HOST_PORT_DEV      9090

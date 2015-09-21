@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) MakcipeAPISession *                session;
 @property (nonatomic, readonly) makcipeAPIRecipeAPIClient * recipeAPIClient;
+@property (nonatomic, readonly) makcipeAPIUserAPIClient * userAPIClient;
 
 - (id)initWithSession:(MakcipeAPISession *)session;
 

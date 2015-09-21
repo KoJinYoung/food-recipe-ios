@@ -26,6 +26,10 @@
     return _session.recipeService;
 }
 
+- (makcipeAPIUserAPIClient *)userAPIClient {
+    return _session.userService;
+}
+
 - (NSError *)errorFromNSException:(NSException *)exception
 {
     if (exception) {

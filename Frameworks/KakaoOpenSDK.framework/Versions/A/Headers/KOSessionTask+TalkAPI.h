@@ -1,5 +1,5 @@
 /**
- * Copyright 2014 Daum Kakao Corp.
+ * Copyright 2015 Kakao Corp.
  *
  * Redistribution and modification in source or binary forms are not permitted without specific prior written permission.
  *
@@ -18,6 +18,9 @@
 
 #import "KOSessionTask.h"
 #import "KOTalkProfile.h"
+#import "KOChatContext.h"
+#import "KOChat.h"
+#import "KOFriend.h"
 
 /*!
  @header KOSessionTask+TalkAPI.h
@@ -60,12 +63,39 @@ typedef NS_ENUM(NSInteger, KOTalkMessageReceiverType) {
                                 completionHandler:(KOSessionTaskCompletionHandler)completionHandler;
 
 /*!
- 
+ @abstract 미리 지정된 Template Message를 사용하여, 카카오톡으로 메시지를 전송합니다. 제휴를 통해 권한이 부여된 특정 앱에서만 호출 가능합니다.
+ @param templateID 미리 지정된 템플릿 메시지 ID.
+ @param receiverFriend 이 메시지를 수신할 친구.
+ @param messageArguments 템플릿 메시지를 만들 때, 채워줘야할 파라미터들.
+ @param completionHandler 요청 완료시 실행될 block. 오류 처리와 전송 완료 시 수행된다.
+ @discussion
  */
 + (instancetype)talkSendMessageTaskWithTemplateID:(NSString *)templateID
-                                       receiverID:(NSString *)receiverID
-                                     receiverType:(KOTalkMessageReceiverType)receiverType
+                                   receiverFriend:(KOFriend *)receiverFriend
                                  messageArguments:(NSDictionary *)messageArguments
                                 completionHandler:(void (^)(NSError *error))completionHandler;
+
+/*!
+ @abstract 미리 지정된 Template Message를 사용하여, 카카오톡으로 메시지를 전송합니다. 제휴를 통해 권한이 부여된 특정 앱에서만 호출 가능합니다.
+ @param templateID 미리 지정된 템플릿 메시지 ID.
+ @param receiverChat 이 메시지를 수신할 채팅방.
+ @param messageArguments 템플릿 메시지를 만들 때, 채워줘야할 파라미터들.
+ @param completionHandler 요청 완료시 실행될 block. 오류 처리와 전송 완료 시 수행된다.
+ @discussion
+ */
++ (instancetype)talkSendMessageTaskWithTemplateID:(NSString *)templateID
+                                     receiverChat:(KOChat *)receiverChat
+                                 messageArguments:(NSDictionary *)messageArguments
+                                completionHandler:(void (^)(NSError *error))completionHandler;
+
+/*!
+ @abstract 카카오톡 채팅방 목록을 가져옵니다. 제휴를 통해 권한이 부여된 특정 앱에서만 호출 가능합니다.
+ @param KOChatContext 채팅방 목록을 불러올 때, 페이징 정보를 처리하기 위한 context.
+ @param completionHandler 카카오톡 채팅방 목록을 가져와서 처리하는 핸들러.
+ @discussion
+ */
++ (instancetype)talkChatListTaskWithContext:(KOChatContext *)context
+                          completionHandler:(void (^)(NSArray *chats, NSError *error))completionHandler;
+
 
 @end

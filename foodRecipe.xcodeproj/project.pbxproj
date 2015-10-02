@@ -35,6 +35,8 @@
 		5F02860C1BA4955400A95AA9 /* etcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02860B1BA4955400A95AA9 /* etcViewController.m */; };
 		5F3950BF1BAF4DC000F06274 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BC1BAF4DC000F06274 /* UserAPI.m */; settings = {ASSET_TAGS = (); }; };
 		5F3950C01BAF4DC000F06274 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BE1BAF4DC000F06274 /* UserInfo.m */; settings = {ASSET_TAGS = (); }; };
+		5FA348CF1BBEAF470093C22F /* recipeListCell_recommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA348CE1BBEAF470093C22F /* recipeListCell_recommend.xib */; settings = {ASSET_TAGS = (); }; };
+		5FA348D11BBEAF590093C22F /* recipeListCell_subscribe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA348D01BBEAF590093C22F /* recipeListCell_subscribe.xib */; settings = {ASSET_TAGS = (); }; };
 		5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F02859D1BA3469600A95AA9 /* Main.storyboard */; };
 		5FB4A7741BB010C700CF7724 /* MakcipeAPIUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB4A7731BB010C700CF7724 /* MakcipeAPIUserService.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		5F3950BC1BAF4DC000F06274 /* UserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPI.m; sourceTree = "<group>"; };
 		5F3950BD1BAF4DC000F06274 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		5F3950BE1BAF4DC000F06274 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		5FA348CE1BBEAF470093C22F /* recipeListCell_recommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell_recommend.xib; sourceTree = "<group>"; };
+		5FA348D01BBEAF590093C22F /* recipeListCell_subscribe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell_subscribe.xib; sourceTree = "<group>"; };
 		5FB4A7721BB010C700CF7724 /* MakcipeAPIUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPIUserService.h; sourceTree = "<group>"; };
 		5FB4A7731BB010C700CF7724 /* MakcipeAPIUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakcipeAPIUserService.m; sourceTree = "<group>"; };
 		B8C6272F9435C401A97C597F /* Pods-foodRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodRecipe/Pods-foodRecipe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 		5F0285ED1BA46F8600A95AA9 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				5FA348CE1BBEAF470093C22F /* recipeListCell_recommend.xib */,
+				5FA348D01BBEAF590093C22F /* recipeListCell_subscribe.xib */,
 				5F0285E71BA46F7300A95AA9 /* recipeListCell.xib */,
 				5F0285E81BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib */,
 				5F0285E91BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib */,
@@ -511,10 +517,12 @@
 			files = (
 				5F0285EB1BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib in Resources */,
 				5F0285EC1BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib in Resources */,
+				5FA348D11BBEAF590093C22F /* recipeListCell_subscribe.xib in Resources */,
 				5F0285A41BA3469600A95AA9 /* LaunchScreen.xib in Resources */,
 				5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */,
 				5F0285A11BA3469600A95AA9 /* Images.xcassets in Resources */,
 				5F0285EA1BA46F7300A95AA9 /* recipeListCell.xib in Resources */,
+				5FA348CF1BBEAF470093C22F /* recipeListCell_recommend.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

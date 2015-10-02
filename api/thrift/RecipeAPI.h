@@ -19,10 +19,10 @@
 
 @protocol makcipeAPIRecipeAPI <NSObject>
 - (NSString *) getAll: (NSString *) table;  // throws TException
-- (makcipeAPIRecipe *) make_All_Recipe_list;  // throws TException
+- (NSMutableArray *) make_All_Recipe_list;  // throws TException
 - (NSMutableArray *) make_Recc_Recipe_list;  // throws TException
 - (NSMutableArray *) make_Subc_Recipe_list;  // throws TException
-- (NSMutableArray *) make_norm_Recipe_list: (NSString *) r_id;  // throws TException
+- (NSMutableArray *) make_norm_Recipe_list: (int32_t) idx;  // throws TException
 @end
 
 @interface makcipeAPIRecipeAPIClient : NSObject <makcipeAPIRecipeAPI> {

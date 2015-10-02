@@ -1,5 +1,5 @@
 /**
-* Copyright 2014 Daum Kakao Corp.
+* Copyright 2015 Kakao Corp.
 *
 * Redistribution and modification in source or binary forms are not permitted without specific prior written permission.
 *
@@ -75,7 +75,7 @@
 
 
 /*!
- @abstract 앱용 버튼 객체를 생성한다.
+ @abstract 웹용 버튼 객체를 생성한다.
  @param text 버튼에 표시될 텍스트
  @param url 이동할 web url
  */
@@ -83,7 +83,7 @@
                                      url:(NSString *)url;
 
 /*!
- @abstract 웹용 버튼 객체를 생성한다.
+ @abstract 앱용 버튼 객체를 생성한다.
  @param text 버튼에 표시될 텍스트
  @param actions array of {@link KakaoTalkLinkAction}
  */

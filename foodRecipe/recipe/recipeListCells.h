@@ -11,6 +11,29 @@
 @protocol recipeListDelegate;
 
 #pragma mark -
+@interface recipeListSize : NSObject
+
++ (CGFloat) heightForRecommend;
++ (UIEdgeInsets) insetForRecommend;
++ (CGSize) sizeForRecommendCell;
++ (CGFloat) minimumInteritemSpacingForRecommend;
++ (CGFloat) minimumLineSpacingForRecommend;
+
++ (CGFloat) heightForSubscribe;
++ (UIEdgeInsets) insetForSubscribe;
++ (CGSize) sizeForSubscribeCell;
++ (CGFloat) minimumInteritemSpacingForSubscribe;
++ (CGFloat) minimumLineSpacingForSubscribe;
+
++ (CGFloat) heightForNormal:(NSInteger)numOfRecipes;
++ (UIEdgeInsets) insetForNormal;
++ (CGSize) sizeForNormalCell;
++ (CGFloat) minimumInteritemSpacingForNormal;
++ (CGFloat) minimumLineSpacingForNormal;
+
+@end
+
+#pragma mark -
 @interface recipeListTableViewCell_horizontal : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UICollectionView *listView;
@@ -47,6 +70,16 @@
 - (void) setRecipeImageWithURL:(NSString*)url;
 
 - (IBAction)toggleRecipeLiked:(UIButton*)sender;
+
+@end
+
+#pragma mark -
+@interface recipeListCell_recommend : recipeListCell
+
+@end
+
+#pragma mark -
+@interface recipeListCell_subscribe : recipeListCell
 
 @end
 

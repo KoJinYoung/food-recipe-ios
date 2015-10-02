@@ -38,16 +38,18 @@
     
     [super viewDidLoad];
     
+    [self initVars];
+    
     UINib* horizontalNib = [UINib nibWithNibName:@"recipeListTableViewCell_horizontal" bundle:nil];
     UINib* verticalNib = [UINib nibWithNibName:@"recipeListTableViewCell_vertical" bundle:nil];
     [_listView registerNib:horizontalNib forCellReuseIdentifier:@"recipeListTableViewCell_horizontal"];
     [_listView registerNib:verticalNib forCellReuseIdentifier:@"recipeListTableViewCell_vertical"];
     
-    [[MakcipeAPIRecipeService recipeService] getAll:@"RECIPE" success:^(NSString *response) {
-        NSLog(@"%@", response);
-    } failure:^(NSError *error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];
+    [[MakcipeAPIRecipeService recipeService] make_All_Recipe_list:nil
+                                                          success:^(makcipeAPIRecipe *response) {
+                                                              
+                                                          }
+                                                          failure:nil];
 }
 
 #pragma mark - table view
@@ -58,6 +60,17 @@
     return 3;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 61.f;
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    
+//}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 1;
@@ -66,13 +79,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 495;
+        return [recipeListSize heightForRecommend];
     }
     else if (indexPath.section == 1) {
-        return 495;
+        return [recipeListSize heightForSubscribe];
     }
     else if (indexPath.section == 2) {
-        return ((_listView.frame.size.width-10.f-5.f)/2.0f) * (CGFloat)recipeArray.count + 20.f;
+        return [recipeListSize heightForNormal:recipeArray.count];
     }
     
     return 0;
@@ -81,6 +94,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UINib *nib = [UINib nibWithNibName:@"recipeListCell" bundle:nil];
+    UINib *nib_recommend = [UINib nibWithNibName:@"recipeListCell_recommend" bundle:nil];
+    UINib *nib_subscribe = [UINib nibWithNibName:@"recipeListCell_subscribe" bundle:nil];
     
     UITableViewCell *cell;
     
@@ -89,7 +104,7 @@
         [cell_.listView setTag:RECIPETYPE_RECOMM];
         [cell_.listView setDataSource:self];
         [cell_.listView setDelegate:self];
-        [cell_.listView registerNib:nib forCellWithReuseIdentifier:@"recipeListCell"];
+        [cell_.listView registerNib:nib_recommend forCellWithReuseIdentifier:@"recipeListCell_recommend"];
         
         cell = cell_;
     }
@@ -98,7 +113,7 @@
         [cell_.listView setTag:RECIPETYPE_SUBSC];
         [cell_.listView setDataSource:self];
         [cell_.listView setDelegate:self];
-        [cell_.listView registerNib:nib forCellWithReuseIdentifier:@"recipeListCell"];
+        [cell_.listView registerNib:nib_subscribe forCellWithReuseIdentifier:@"recipeListCell_subscribe"];
         
         cell = cell_;
     }
@@ -130,19 +145,29 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
 #pragma mark for test
+    if (collectionView.tag == RECIPETYPE_RECOMM) {
+
+    }
+    else if (collectionView.tag == RECIPETYPE_SUBSC) {
+
+    }
+    else if (collectionView.tag == RECIPETYPE_NONE) {
+
+    }
+    
     return recipeArray.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (collectionView.tag == RECIPETYPE_RECOMM) {
-        return CGSizeMake(_listView.frame.size.width-40.f, 475.f);
+        return [recipeListSize sizeForRecommendCell];
     }
     else if (collectionView.tag == RECIPETYPE_SUBSC) {
-        return CGSizeMake(_listView.frame.size.width-40.f, 475.f);
+        return [recipeListSize sizeForSubscribeCell];
     }
     else if (collectionView.tag == RECIPETYPE_NONE) {
-        return CGSizeMake((_listView.frame.size.width-10.f-5.f)/2.f, (_listView.frame.size.width-10.f-5.f)/2.f);
+        return [recipeListSize sizeForNormalCell];
     }
     
     return CGSizeZero;
@@ -150,25 +175,66 @@
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     
+    if (collectionView.tag == RECIPETYPE_RECOMM) {
+        return [recipeListSize minimumInteritemSpacingForRecommend];
+    }
+    else if (collectionView.tag == RECIPETYPE_SUBSC) {
+        return [recipeListSize minimumInteritemSpacingForSubscribe];
+    }
+    else if (collectionView.tag == RECIPETYPE_NONE) {
+        return [recipeListSize minimumInteritemSpacingForNormal];
+    }
+    
     return 20.f;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    
+    if (collectionView.tag == RECIPETYPE_RECOMM) {
+        return [recipeListSize minimumLineSpacingForRecommend];
+    }
+    else if (collectionView.tag == RECIPETYPE_SUBSC) {
+        return [recipeListSize minimumLineSpacingForSubscribe];
+    }
+    else if (collectionView.tag == RECIPETYPE_NONE) {
+        return [recipeListSize minimumLineSpacingForNormal];
+    }
     
     return 20.f;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
+    if (collectionView.tag == RECIPETYPE_RECOMM) {
+        return [recipeListSize insetForRecommend];
+    }
+    else if (collectionView.tag == RECIPETYPE_SUBSC) {
+        return [recipeListSize insetForSubscribe];
+    }
+    else if (collectionView.tag == RECIPETYPE_NONE) {
+        return [recipeListSize insetForNormal];
+    }
+    
     return UIEdgeInsetsMake(20.f, 20.f, 0, 20.f);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    recipeListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeListCell" forIndexPath:indexPath];
+    recipeListCell *cell;
+    
+    if (collectionView.tag == RECIPETYPE_RECOMM) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeListCell_recommend" forIndexPath:indexPath];
+    }
+    else if (collectionView.tag == RECIPETYPE_SUBSC) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeListCell_subscribe" forIndexPath:indexPath];
+    }
+    else if (collectionView.tag == RECIPETYPE_NONE) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeListCell" forIndexPath:indexPath];
+    }
     
     makcipeAPIRecipe *recipe = [recipeArray objectAtIndex:indexPath.row];
     [cell setRecipeImageWithURL:recipe.recipePic];
+    
     return cell;
 }
 

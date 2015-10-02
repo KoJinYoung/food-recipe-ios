@@ -32,4 +32,41 @@
     } success:success failure:failure];
 }
 
+- (void) make_All_Recipe_list: (NSString *) token
+                      success:(void (^)(makcipeAPIRecipe *response))success
+                      failure:(void (^)(NSError *error))failure
+{
+    [self invokeAsyncIdBlock:^id{
+        return [self.recipeAPIClient make_All_Recipe_list];
+    } success:success failure:failure];
+}
+
+- (void) make_Recc_Recipe_list: (NSString *) token
+                       success:(void (^)(NSMutableArray *response))success
+                       failure:(void (^)(NSError *error))failure
+{
+    [self invokeAsyncIdBlock:^id{
+        return [self.recipeAPIClient make_Recc_Recipe_list];
+    } success:success failure:failure];
+}
+
+- (void) make_Subc_Recipe_list: (NSString *) token
+                       success:(void (^)(NSMutableArray *response))success
+                       failure:(void (^)(NSError *error))failure
+{
+    [self invokeAsyncIdBlock:^id{
+        return [self.recipeAPIClient make_Subc_Recipe_list];
+    } success:success failure:failure];
+}
+
+- (void) make_norm_Recipe_list: (NSString *) token
+                      recipeId: (NSString *) r_id
+                       success:(void (^)(NSMutableArray *response))success
+                       failure:(void (^)(NSError *error))failure
+{
+    [self invokeAsyncIdBlock:^id{
+        return [self.recipeAPIClient make_norm_Recipe_list:r_id];
+    } success:success failure:failure];
+}
+
 @end

@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 Daum Kakao Corp.
+* Copyright 2015 Kakao Corp.
 *
 * Redistribution and modification in source or binary forms are not permitted without specific prior written permission.
 *
@@ -64,6 +64,28 @@ typedef NS_ENUM(NSInteger, KOAuthType) {
 };
 
 /*!
+ @abstract KOAgeAuthLevel 연령인증 시 인증 레벨.
+ @constant KOAgeAuthLevelType1 1차 인증 레벨.
+ @constant KOAgeAuthLevelType2 2차 인증 레벨.
+ */
+typedef NS_ENUM(NSInteger, KOAgeAuthLevel) {
+    KOAgeAuthLevelType1 = 10,
+    KOAgeAuthLevelType2 = 20
+};
+
+/*!
+ @abstract KOAgeAuthLimit 연령인증 시 인증 나이.
+ @constant KOAgeAuthLimitType12 12세 인증.
+ @constant KOAgeAuthLimitType15 15세 인증.
+ @constant KOAgeAuthLimitType19 19세 인증.
+ */
+typedef NS_ENUM(NSInteger, KOAgeAuthLimit) {
+    KOAgeAuthLimitType12 = 12,
+    KOAgeAuthLimitType15 = 15,
+    KOAgeAuthLimitType19 = 19
+};
+
+/*!
  * @class KOSession
  * @abstract 인증 관리 클래스.
  */
@@ -102,10 +124,10 @@ typedef NS_ENUM(NSInteger, KOAuthType) {
 @property (nonatomic, getter=isAutomaticPeriodicRefresh) BOOL automaticPeriodicRefresh;
 
 /*!
- * @property attachingViewInLastSubview
- * @abstract 인웹뷰로 로그인시 해당 로그인 웹페이지 뷰를 현재 레이아웃에서 가장 마지막의 서브뷰로 구성할지의 유무. 디폴트 YES.
+ * @property presentingViewController
+ * @abstract login view 가 present 될 뷰컨트롤러를 설정. (UINavigationController or UIViewController)
  */
-@property (nonatomic, getter=isAttachingViewInLastSubview) BOOL attachingViewInLastSubview;
+@property (nonatomic, weak) UIViewController *presentingViewController;
 
 @property (nonatomic, assign) UIBarStyle presentedViewBarStyle;
 @property (nonatomic, assign, getter=isPresentedViewBarTranslucent) BOOL presentedViewBarTranslucent;
@@ -124,6 +146,12 @@ typedef NS_ENUM(NSInteger, KOAuthType) {
  @param url 카카오 계정 인증 요청 code 또는 오류정보를 담은 url
  */
 + (BOOL)isKakaoAccountLoginCallback:(NSURL *)url;
+
+/*!
+ 카카오계정 연령인증 callback인지 여부
+ @param url 카카오 연령인증 요청결과를 담은 url
+ */
++ (BOOL)isKakaoAgeAuthCallback:(NSURL *)url;
 
 /*!
  KakaoLink 메시지의 Action인지 여부
@@ -198,14 +226,13 @@ typedef NS_ENUM(NSInteger, KOAuthType) {
  인증되어 있는지 여부.
  */
 - (BOOL)isOpen;
-//
-//- (void)pendTask:(KOSessionTask*)task;
 
 /*!
- 새로운 동의 목록이 필요할 경우에 사용자에게 새로운 동의창을 디스플레이하고 동의를 유도한다
- @param scopes 요청에 필요한 동의 목록.
+ 새로운 연령 인증이 필요할 경우 사용자에게 연령 인증관련 창을 띄워서 연령 인증을 유도합니다. 제휴를 통해 권한이 부여된 특정 앱에서만 호출 가능합니다.
  */
-- (void)showNewApproval:(NSArray *)scopes;
+- (void)showAgeAuthWithAuthLevel:(KOAgeAuthLevel)authLevel
+                       authLimit:(KOAgeAuthLimit)authLimit
+               completionHandler:(KOCompletionSuccessHandler)completionHandler;
 
 @end
 

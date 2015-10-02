@@ -24,9 +24,6 @@
  
     int64_t time = [NSDate date].timeIntervalSince1970*1000;
     NSLog(@"%lld", time);
-    sleep(1);
-    time = [NSDate date].timeIntervalSince1970*1000;
-    NSLog(@"%lld", time);
     
     [MakcipeAPISession setSharedSessionUserAgent:@""];
     

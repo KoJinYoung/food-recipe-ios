@@ -1,5 +1,5 @@
 /**
-* Copyright 2015 Daum Kakao Corp.
+* Copyright 2015 Kakao Corp.
 *
 * Redistribution and modification in source or binary forms are not permitted without specific prior written permission.
 *
@@ -26,5 +26,8 @@
 #import "KOSessionTask+StoryAPI.h"
 #import "KOSessionTask+PushAPI.h"
 #import "KOSessionTask+TokenAPI.h"
+#import "KOSessionTask+FriendAPI.h"
+#import "KOSessionTask+AgeAuthAPI.h"
+#import "KOSessionTask+StorageAPI.h"
 
-#define KAKAO_SDK_IOS_VERSION_STRING @"1.0.37"
+#define KAKAO_SDK_IOS_VERSION_STRING @"1.0.42"

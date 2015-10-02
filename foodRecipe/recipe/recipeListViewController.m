@@ -45,12 +45,14 @@
     [_listView registerNib:horizontalNib forCellReuseIdentifier:@"recipeListTableViewCell_horizontal"];
     [_listView registerNib:verticalNib forCellReuseIdentifier:@"recipeListTableViewCell_vertical"];
     
-    [[MakcipeAPIRecipeService recipeService] make_All_Recipe_list:nil
-                                                          success:^(makcipeAPIRecipe *response) {
-                                                              
-                                                          }
-                                                          failure:nil];
+    
+//    [[MakcipeAPIRecipeService recipeService] make_All_Recipe_list:nil
+//                                                          success:^(makcipeAPIRecipe *response) {
+//                                                              
+//                                                          }
+//                                                          failure:nil];
 }
+
 
 #pragma mark - table view
 #pragma mark -datasource
@@ -104,6 +106,7 @@
         [cell_.listView setTag:RECIPETYPE_RECOMM];
         [cell_.listView setDataSource:self];
         [cell_.listView setDelegate:self];
+        [cell_.listView setScrollEnabled:YES];
         [cell_.listView registerNib:nib_recommend forCellWithReuseIdentifier:@"recipeListCell_recommend"];
         
         cell = cell_;
@@ -113,6 +116,7 @@
         [cell_.listView setTag:RECIPETYPE_SUBSC];
         [cell_.listView setDataSource:self];
         [cell_.listView setDelegate:self];
+        [cell_.listView setScrollEnabled:YES];
         [cell_.listView registerNib:nib_subscribe forCellWithReuseIdentifier:@"recipeListCell_subscribe"];
         
         cell = cell_;
@@ -127,6 +131,8 @@
         
         cell = cell_;
     }
+    
+    [cell.contentView setUserInteractionEnabled:NO];
     
     return cell;
 }

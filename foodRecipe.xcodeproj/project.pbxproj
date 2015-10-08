@@ -28,13 +28,14 @@
 		5F0285EB1BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285E81BA46F7300A95AA9 /* recipeListTableViewCell_horizontal.xib */; };
 		5F0285EC1BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0285E91BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib */; };
 		5F0285F11BA475A900A95AA9 /* recipeListCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285F01BA475A900A95AA9 /* recipeListCells.m */; };
-		5F0285F41BA4924D00A95AA9 /* detailRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */; };
 		5F0285FE1BA4931400A95AA9 /* myRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0285FD1BA4931400A95AA9 /* myRecipeViewController.m */; };
 		5F0286061BA493D100A95AA9 /* storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286051BA493D100A95AA9 /* storyboard.m */; };
 		5F0286091BA4953700A95AA9 /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0286081BA4953700A95AA9 /* shopViewController.m */; };
 		5F02860C1BA4955400A95AA9 /* etcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02860B1BA4955400A95AA9 /* etcViewController.m */; };
 		5F3950BF1BAF4DC000F06274 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BC1BAF4DC000F06274 /* UserAPI.m */; settings = {ASSET_TAGS = (); }; };
 		5F3950C01BAF4DC000F06274 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3950BE1BAF4DC000F06274 /* UserInfo.m */; settings = {ASSET_TAGS = (); }; };
+		5F4BA82C1BC663A5009B03BF /* UIView+position.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA82B1BC663A5009B03BF /* UIView+position.m */; settings = {ASSET_TAGS = (); }; };
+		5F4BA8311BC68F14009B03BF /* detailRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BA8301BC68F14009B03BF /* detailRecipeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5FA348CF1BBEAF470093C22F /* recipeListCell_recommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA348CE1BBEAF470093C22F /* recipeListCell_recommend.xib */; settings = {ASSET_TAGS = (); }; };
 		5FA348D11BBEAF590093C22F /* recipeListCell_subscribe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA348D01BBEAF590093C22F /* recipeListCell_subscribe.xib */; settings = {ASSET_TAGS = (); }; };
 		5FA398391BA4A738001E44F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F02859D1BA3469600A95AA9 /* Main.storyboard */; };
@@ -92,8 +93,6 @@
 		5F0285E91BA46F7300A95AA9 /* recipeListTableViewCell_vertical.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListTableViewCell_vertical.xib; sourceTree = "<group>"; };
 		5F0285EF1BA475A800A95AA9 /* recipeListCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeListCells.h; sourceTree = "<group>"; };
 		5F0285F01BA475A900A95AA9 /* recipeListCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recipeListCells.m; sourceTree = "<group>"; };
-		5F0285F21BA4924D00A95AA9 /* detailRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailRecipeViewController.h; sourceTree = "<group>"; };
-		5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailRecipeViewController.m; sourceTree = "<group>"; };
 		5F0285FC1BA4931400A95AA9 /* myRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myRecipeViewController.h; sourceTree = "<group>"; };
 		5F0285FD1BA4931400A95AA9 /* myRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myRecipeViewController.m; sourceTree = "<group>"; };
 		5F0286011BA493A900A95AA9 /* storyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = storyboard.h; sourceTree = "<group>"; };
@@ -106,6 +105,10 @@
 		5F3950BC1BAF4DC000F06274 /* UserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPI.m; sourceTree = "<group>"; };
 		5F3950BD1BAF4DC000F06274 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		5F3950BE1BAF4DC000F06274 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		5F4BA82A1BC663A5009B03BF /* UIView+position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+position.h"; sourceTree = "<group>"; };
+		5F4BA82B1BC663A5009B03BF /* UIView+position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+position.m"; sourceTree = "<group>"; };
+		5F4BA82F1BC68F14009B03BF /* detailRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailRecipeViewController.h; sourceTree = "<group>"; };
+		5F4BA8301BC68F14009B03BF /* detailRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailRecipeViewController.m; sourceTree = "<group>"; };
 		5FA348CE1BBEAF470093C22F /* recipeListCell_recommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell_recommend.xib; sourceTree = "<group>"; };
 		5FA348D01BBEAF590093C22F /* recipeListCell_subscribe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recipeListCell_subscribe.xib; sourceTree = "<group>"; };
 		5FB4A7721BB010C700CF7724 /* MakcipeAPIUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakcipeAPIUserService.h; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 				5F0285EE1BA46F9300A95AA9 /* header */,
 				5F0285E61BA42A6D00A95AA9 /* source */,
 				5F0285ED1BA46F8600A95AA9 /* xib */,
+				5F4BA82E1BC68DA0009B03BF /* subVC */,
 			);
 			path = recipe;
 			sourceTree = "<group>";
@@ -320,7 +324,6 @@
 		5F0285E61BA42A6D00A95AA9 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				5F0285F31BA4924D00A95AA9 /* detailRecipeViewController.m */,
 				5F0285F01BA475A900A95AA9 /* recipeListCells.m */,
 				5F0285E41BA42A6700A95AA9 /* recipeListViewController.m */,
 			);
@@ -342,7 +345,6 @@
 		5F0285EE1BA46F9300A95AA9 /* header */ = {
 			isa = PBXGroup;
 			children = (
-				5F0285F21BA4924D00A95AA9 /* detailRecipeViewController.h */,
 				5F0285EF1BA475A800A95AA9 /* recipeListCells.h */,
 				5F0285E31BA42A6700A95AA9 /* recipeListViewController.h */,
 			);
@@ -410,6 +412,7 @@
 		5F0285FF1BA4937600A95AA9 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				5F4BA82B1BC663A5009B03BF /* UIView+position.m */,
 				5F0286051BA493D100A95AA9 /* storyboard.m */,
 			);
 			name = source;
@@ -418,9 +421,43 @@
 		5F0286001BA4937A00A95AA9 /* header */ = {
 			isa = PBXGroup;
 			children = (
+				5F4BA82A1BC663A5009B03BF /* UIView+position.h */,
 				5F0286011BA493A900A95AA9 /* storyboard.h */,
 			);
 			name = header;
+			sourceTree = "<group>";
+		};
+		5F4BA82D1BC68D93009B03BF /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				5F4BA8321BC68F34009B03BF /* header */,
+				5F4BA8331BC68F3A009B03BF /* source */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		5F4BA82E1BC68DA0009B03BF /* subVC */ = {
+			isa = PBXGroup;
+			children = (
+				5F4BA82D1BC68D93009B03BF /* detail */,
+			);
+			name = subVC;
+			sourceTree = "<group>";
+		};
+		5F4BA8321BC68F34009B03BF /* header */ = {
+			isa = PBXGroup;
+			children = (
+				5F4BA82F1BC68F14009B03BF /* detailRecipeViewController.h */,
+			);
+			name = header;
+			sourceTree = "<group>";
+		};
+		5F4BA8331BC68F3A009B03BF /* source */ = {
+			isa = PBXGroup;
+			children = (
+				5F4BA8301BC68F14009B03BF /* detailRecipeViewController.m */,
+			);
+			name = source;
 			sourceTree = "<group>";
 		};
 		F49A85EB3937D9AFDE6703DD /* Frameworks */ = {
@@ -591,6 +628,7 @@
 				5F0285DE1BA4072000A95AA9 /* accountManager.m in Sources */,
 				5F0285991BA3469600A95AA9 /* AppDelegate.m in Sources */,
 				5F0285FE1BA4931400A95AA9 /* myRecipeViewController.m in Sources */,
+				5F4BA82C1BC663A5009B03BF /* UIView+position.m in Sources */,
 				5F0285CE1BA3483D00A95AA9 /* Recipe.m in Sources */,
 				5F0286091BA4953700A95AA9 /* shopViewController.m in Sources */,
 				5F0285E51BA42A6700A95AA9 /* recipeListViewController.m in Sources */,
@@ -601,12 +639,12 @@
 				5F0285961BA3469600A95AA9 /* main.m in Sources */,
 				5F0285E11BA429B600A95AA9 /* TermsAndPrivacyViewController.m in Sources */,
 				5F0285CF1BA3483D00A95AA9 /* RecipeAPI.m in Sources */,
-				5F0285F41BA4924D00A95AA9 /* detailRecipeViewController.m in Sources */,
 				5F0285F11BA475A900A95AA9 /* recipeListCells.m in Sources */,
 				5F0285CA1BA3483D00A95AA9 /* MakcipeAPI.m in Sources */,
 				5F0285DB1BA34F0600A95AA9 /* loginViewController.m in Sources */,
 				5F0285CC1BA3483D00A95AA9 /* MakcipeSDK.m in Sources */,
 				5FB4A7741BB010C700CF7724 /* MakcipeAPIUserService.m in Sources */,
+				5F4BA8311BC68F14009B03BF /* detailRecipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

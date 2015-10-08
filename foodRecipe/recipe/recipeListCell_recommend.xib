@@ -5,35 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="recipeListCell_recommend"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="3sX-BA-ToK" customClass="recipeListCell_recommend">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UR5-af-Xtk" userLabel="RecipePic">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                     <animations/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-zj-fLK">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V6v-PB-mat" userLabel="UserThumbnail">
-                            <rect key="frame" x="20" y="10" width="30" height="30"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V6v-PB-mat" userLabel="UserThumbnail">
+                            <rect key="frame" x="20" y="5" width="50" height="50"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="30" id="lg9-Tq-76W"/>
-                                <constraint firstAttribute="height" constant="30" id="uTT-de-wor"/>
+                                <constraint firstAttribute="width" constant="50" id="lg9-Tq-76W"/>
+                                <constraint firstAttribute="height" constant="50" id="uTT-de-wor"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER NAME(Email)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhg-z1-Byj" userLabel="UserName">
-                            <rect key="frame" x="60" y="40" width="480" height="10"/>
+                            <rect key="frame" x="80" y="45" width="460" height="10"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="nf2-Jp-DXa"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5z-9x-JpA" userLabel="LikeView">
@@ -70,18 +69,27 @@
                         </view>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="5lS-Of-nQK"/>
+                        <constraint firstAttribute="height" constant="60" id="5lS-Of-nQK"/>
                         <constraint firstItem="V6v-PB-mat" firstAttribute="top" secondItem="eg0-zj-fLK" secondAttribute="top" constant="10" id="Fe1-oX-bHV"/>
                         <constraint firstAttribute="bottom" secondItem="Rhg-z1-Byj" secondAttribute="bottom" id="G8F-cD-8PO"/>
                         <constraint firstItem="u5z-9x-JpA" firstAttribute="leading" secondItem="Rhg-z1-Byj" secondAttribute="trailing" constant="10" id="Jka-F1-e8z"/>
                         <constraint firstItem="Rhg-z1-Byj" firstAttribute="leading" secondItem="V6v-PB-mat" secondAttribute="trailing" constant="10" id="VuY-fn-oAs"/>
+                        <constraint firstItem="Rhg-z1-Byj" firstAttribute="bottom" secondItem="V6v-PB-mat" secondAttribute="bottom" id="XRC-4v-qdU"/>
+                        <constraint firstItem="V6v-PB-mat" firstAttribute="centerY" secondItem="eg0-zj-fLK" secondAttribute="centerY" id="aGS-kd-fd4"/>
                         <constraint firstItem="V6v-PB-mat" firstAttribute="leading" secondItem="eg0-zj-fLK" secondAttribute="leading" constant="20" id="ief-fe-Gao"/>
                         <constraint firstAttribute="bottom" secondItem="V6v-PB-mat" secondAttribute="bottom" constant="10" id="pnJ-pw-YuU"/>
                         <constraint firstAttribute="trailing" secondItem="u5z-9x-JpA" secondAttribute="trailing" constant="20" id="ri4-aR-aLx"/>
                         <constraint firstItem="u5z-9x-JpA" firstAttribute="top" secondItem="eg0-zj-fLK" secondAttribute="top" constant="10" id="sl9-0H-lrS"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Fe1-oX-bHV"/>
+                            <exclude reference="pnJ-pw-YuU"/>
+                            <exclude reference="G8F-cD-8PO"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsl-xD-un1">
                     <rect key="frame" x="0.0" y="510" width="600" height="90"/>
@@ -174,13 +182,20 @@
                         </mask>
                     </variation>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ih-jz-m1W">
+                    <rect key="frame" x="290" y="320" width="20" height="20"/>
+                    <animations/>
+                </activityIndicatorView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eg0-zj-fLK" firstAttribute="top" secondItem="3sX-BA-ToK" secondAttribute="top" id="05c-pM-jOL"/>
+                <constraint firstItem="0ih-jz-m1W" firstAttribute="centerY" secondItem="UR5-af-Xtk" secondAttribute="centerY" id="CB3-tH-baQ"/>
+                <constraint firstItem="UR5-af-Xtk" firstAttribute="top" secondItem="eg0-zj-fLK" secondAttribute="bottom" id="EtG-CW-VGX"/>
                 <constraint firstItem="Wsl-xD-un1" firstAttribute="leading" secondItem="3sX-BA-ToK" secondAttribute="leading" id="Lp1-zN-GoN"/>
                 <constraint firstAttribute="bottom" secondItem="UR5-af-Xtk" secondAttribute="bottom" id="PIH-aE-knc"/>
+                <constraint firstItem="0ih-jz-m1W" firstAttribute="centerX" secondItem="UR5-af-Xtk" secondAttribute="centerX" id="RsU-z7-02g"/>
                 <constraint firstItem="UR5-af-Xtk" firstAttribute="top" secondItem="3sX-BA-ToK" secondAttribute="top" id="Tax-ZM-l6Q"/>
                 <constraint firstAttribute="trailing" secondItem="eg0-zj-fLK" secondAttribute="trailing" id="Ue2-PJ-Seq"/>
                 <constraint firstAttribute="trailing" secondItem="UR5-af-Xtk" secondAttribute="trailing" id="W5s-Et-PLa"/>
@@ -192,10 +207,12 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="Tax-ZM-l6Q"/>
                     <exclude reference="vBq-NA-Vt9"/>
                 </mask>
             </variation>
             <connections>
+                <outlet property="loadingIndicator" destination="0ih-jz-m1W" id="1LR-YC-3oP"/>
                 <outlet property="recipeCommentLabel" destination="M7u-xW-UcN" id="YN5-or-sk0"/>
                 <outlet property="recipeCommentLabelHeight" destination="28Y-je-ONC" id="dIB-5x-Qzu"/>
                 <outlet property="recipeImageView" destination="UR5-af-Xtk" id="7BE-NT-7T8"/>

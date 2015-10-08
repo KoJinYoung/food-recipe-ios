@@ -14,6 +14,10 @@
 @interface recipeListViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     NSMutableArray* recipeArray;
+    
+    recipeListTableViewCell_horizontal  *cell_recommend;
+    recipeListTableViewCell_horizontal  *cell_subscribe;
+    recipeListTableViewCell_vertical    *cell_normal;
 }
 @end
 
@@ -21,36 +25,31 @@
 
 - (void)initVars {
     
-    makcipeAPIRecipe *recipe1 = [[makcipeAPIRecipe alloc] init];
-    makcipeAPIRecipe *recipe2 = [[makcipeAPIRecipe alloc] init];
-    makcipeAPIRecipe *recipe3 = [[makcipeAPIRecipe alloc] init];
-    makcipeAPIRecipe *recipe4 = [[makcipeAPIRecipe alloc] init];
+    recipeArray = [NSMutableArray array];
     
-    [recipe1 setRecipePic:@"http://pds21.egloos.com/pds/201206/03/15/d0013015_4fca36c2b2529.jpg"];
-    [recipe2 setRecipePic:@"http://pds23.egloos.com/pds/201206/03/15/d0013015_4fca36c8791af.jpg"];
-    [recipe3 setRecipePic:@"http://pds24.egloos.com/pds/201206/03/15/d0013015_4fca36cf50ed3.jpg"];
-    [recipe4 setRecipePic:@"http://pds21.egloos.com/pds/201206/03/15/d0013015_4fca36d64248c.jpg"];
-    
-    recipeArray = [NSMutableArray arrayWithObjects:recipe1, recipe2, recipe3, recipe4, nil];
+    [[MakcipeAPIRecipeService recipeService] make_All_Recipe_list:nil
+                                                          success:^(NSMutableArray *response) {
+                                                              recipeArray = response;
+                                                              [self.listView reloadData];
+                                                              [cell_recommend.listView reloadData];
+                                                              [cell_subscribe.listView reloadData];
+                                                              [cell_normal.listView reloadData];
+                                                          } failure:^(NSError *error) {
+                                                              
+                                                          }];
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
-    [self initVars];
-    
     UINib* horizontalNib = [UINib nibWithNibName:@"recipeListTableViewCell_horizontal" bundle:nil];
     UINib* verticalNib = [UINib nibWithNibName:@"recipeListTableViewCell_vertical" bundle:nil];
     [_listView registerNib:horizontalNib forCellReuseIdentifier:@"recipeListTableViewCell_horizontal"];
     [_listView registerNib:verticalNib forCellReuseIdentifier:@"recipeListTableViewCell_vertical"];
     
+    [self initVars];
     
-//    [[MakcipeAPIRecipeService recipeService] make_All_Recipe_list:nil
-//                                                          success:^(makcipeAPIRecipe *response) {
-//                                                              
-//                                                          }
-//                                                          failure:nil];
 }
 
 
@@ -61,17 +60,6 @@
     
     return 3;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 61.f;
-}
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    
-//}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -102,34 +90,37 @@
     UITableViewCell *cell;
     
     if (indexPath.section == 0) {
-        recipeListTableViewCell_horizontal *cell_ = (recipeListTableViewCell_horizontal*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_horizontal"];
-        [cell_.listView setTag:RECIPETYPE_RECOMM];
-        [cell_.listView setDataSource:self];
-        [cell_.listView setDelegate:self];
-        [cell_.listView setScrollEnabled:YES];
-        [cell_.listView registerNib:nib_recommend forCellWithReuseIdentifier:@"recipeListCell_recommend"];
+        cell_recommend = (recipeListTableViewCell_horizontal*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_horizontal"];
+        [cell_recommend.titleLabel setText:NSLocalizedString(@"추천 레시피", nil)];
+        [cell_recommend.listView setTag:RECIPETYPE_RECOMM];
+        [cell_recommend.listView setDataSource:self];
+        [cell_recommend.listView setDelegate:self];
+        [cell_recommend.listView setScrollEnabled:YES];
+        [cell_recommend.listView registerNib:nib_recommend forCellWithReuseIdentifier:@"recipeListCell_recommend"];
         
-        cell = cell_;
+        cell = cell_recommend;
     }
     else if (indexPath.section == 1) {
-        recipeListTableViewCell_horizontal *cell_ = (recipeListTableViewCell_horizontal*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_horizontal"];
-        [cell_.listView setTag:RECIPETYPE_SUBSC];
-        [cell_.listView setDataSource:self];
-        [cell_.listView setDelegate:self];
-        [cell_.listView setScrollEnabled:YES];
-        [cell_.listView registerNib:nib_subscribe forCellWithReuseIdentifier:@"recipeListCell_subscribe"];
+        cell_subscribe = (recipeListTableViewCell_horizontal*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_horizontal"];
+        [cell_subscribe.titleLabel setText:NSLocalizedString(@"내가 구독한 레시피", nil)];
+        [cell_subscribe.listView setTag:RECIPETYPE_SUBSC];
+        [cell_subscribe.listView setDataSource:self];
+        [cell_subscribe.listView setDelegate:self];
+        [cell_subscribe.listView setScrollEnabled:YES];
+        [cell_subscribe.listView registerNib:nib_subscribe forCellWithReuseIdentifier:@"recipeListCell_subscribe"];
         
-        cell = cell_;
+        cell = cell_subscribe;
     }
     else if (indexPath.section == 2) {
-        recipeListTableViewCell_vertical *cell_ = (recipeListTableViewCell_vertical*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_vertical"];
-        [cell_.listView setTag:RECIPETYPE_NONE];
-        [cell_.listView setDataSource:self];
-        [cell_.listView setDelegate:self];
-        [cell_.listView setScrollEnabled:NO];
-        [cell_.listView registerNib:nib forCellWithReuseIdentifier:@"recipeListCell"];
+        cell_normal = (recipeListTableViewCell_vertical*)[tableView dequeueReusableCellWithIdentifier:@"recipeListTableViewCell_vertical"];
+        [cell_normal.titleLabel setText:NSLocalizedString(@"막쓰는 레시피", nil)];
+        [cell_normal.listView setTag:RECIPETYPE_NONE];
+        [cell_normal.listView setDataSource:self];
+        [cell_normal.listView setDelegate:self];
+        [cell_normal.listView setScrollEnabled:NO];
+        [cell_normal.listView registerNib:nib forCellWithReuseIdentifier:@"recipeListCell"];
         
-        cell = cell_;
+        cell = cell_normal;
     }
     
     [cell.contentView setUserInteractionEnabled:NO];
@@ -239,7 +230,10 @@
     }
     
     makcipeAPIRecipe *recipe = [recipeArray objectAtIndex:indexPath.row];
+    [cell setUserThumbnailWithURL:recipe.writerPic];
     [cell setRecipeImageWithURL:recipe.recipePic];
+    [cell setUserName:recipe.writerName];
+    [cell setRecipeComment:recipe.recipeComment];
     
     return cell;
 }

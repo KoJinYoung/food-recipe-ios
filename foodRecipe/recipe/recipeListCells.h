@@ -36,6 +36,7 @@
 #pragma mark -
 @interface recipeListTableViewCell_horizontal : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *listView;
 
 @end
@@ -43,6 +44,7 @@
 #pragma mark -
 @interface recipeListTableViewCell_vertical : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *listView;
 
 @end
@@ -58,15 +60,13 @@
 @property (strong, nonatomic) IBOutlet UILabel*             recipeCommentLabel;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint*  recipeCommentLabelHeight;
 @property (strong, nonatomic) IBOutlet UIImageView*         recipeImageView;
-@property (strong, nonatomic) IBOutlet UILabel*             recipeDescriptionLabel;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint*  recipeDescriptionLabelHeight;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView*         recipeLikeImageView;
 @property (strong, nonatomic) IBOutlet UIButton*            recipeLikeButton;
 
 - (void) setUserThumbnailWithURL:(NSString*)url;
 - (void) setUserName:(NSString*)name;
 - (void) setRecipeComment:(NSString*)comment;
-- (void) setRecipeDescription:(NSString*)desc;
 - (void) setRecipeImageWithURL:(NSString*)url;
 
 - (IBAction)toggleRecipeLiked:(UIButton*)sender;

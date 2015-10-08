@@ -11,10 +11,46 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-OY-LsR">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZs-B3-sEk">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V35-px-9zJ">
+                            <rect key="frame" x="20" y="20" width="560" height="31"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odT-lY-j9b">
+                                    <rect key="frame" x="20" y="10.5" width="520" height="10"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="8er-1f-G9q"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="odT-lY-j9b" secondAttribute="trailing" constant="20" id="3GF-6u-TgT"/>
+                                <constraint firstItem="odT-lY-j9b" firstAttribute="leading" secondItem="V35-px-9zJ" secondAttribute="leading" constant="20" id="82g-2h-Kch"/>
+                                <constraint firstItem="odT-lY-j9b" firstAttribute="centerY" secondItem="V35-px-9zJ" secondAttribute="centerY" id="OHh-NP-Ij5"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="V35-px-9zJ" secondAttribute="trailing" constant="20" id="2Wi-i0-y3y"/>
+                        <constraint firstItem="V35-px-9zJ" firstAttribute="leading" secondItem="qZs-B3-sEk" secondAttribute="leading" constant="20" id="fLz-MW-g5t"/>
+                        <constraint firstItem="V35-px-9zJ" firstAttribute="top" secondItem="qZs-B3-sEk" secondAttribute="top" constant="20" id="srl-4T-miG"/>
+                        <constraint firstAttribute="bottom" secondItem="V35-px-9zJ" secondAttribute="bottom" constant="10" id="t5w-mD-wI1"/>
+                        <constraint firstAttribute="height" constant="61" id="vZt-Gd-rBH"/>
+                    </constraints>
+                </view>
+                <collectionView contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-OY-LsR">
+                    <rect key="frame" x="0.0" y="61" width="600" height="539"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ox5-kB-eb3">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -26,13 +62,23 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="qZs-B3-sEk" firstAttribute="leading" secondItem="UoB-cT-nWu" secondAttribute="leading" id="A2z-Ab-OoF"/>
                 <constraint firstItem="Jgv-OY-LsR" firstAttribute="top" secondItem="UoB-cT-nWu" secondAttribute="top" id="A9j-gE-zUY"/>
+                <constraint firstItem="qZs-B3-sEk" firstAttribute="top" secondItem="UoB-cT-nWu" secondAttribute="top" id="CoE-Gm-XHh"/>
+                <constraint firstAttribute="trailing" secondItem="qZs-B3-sEk" secondAttribute="trailing" id="Nf3-Xm-36x"/>
+                <constraint firstItem="Jgv-OY-LsR" firstAttribute="top" secondItem="qZs-B3-sEk" secondAttribute="bottom" id="Zfe-rj-kwe"/>
                 <constraint firstAttribute="trailing" secondItem="Jgv-OY-LsR" secondAttribute="trailing" id="fuy-oR-q7v"/>
                 <constraint firstItem="Jgv-OY-LsR" firstAttribute="leading" secondItem="UoB-cT-nWu" secondAttribute="leading" id="xTf-sP-Swg"/>
                 <constraint firstAttribute="bottom" secondItem="Jgv-OY-LsR" secondAttribute="bottom" id="yXW-yU-SVg"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="A9j-gE-zUY"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="listView" destination="Jgv-OY-LsR" id="Na1-x8-PAD"/>
+                <outlet property="titleLabel" destination="odT-lY-j9b" id="h7K-Pe-65n"/>
             </connections>
             <point key="canvasLocation" x="599" y="-844"/>
         </view>

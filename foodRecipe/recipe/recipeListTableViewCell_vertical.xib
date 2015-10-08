@@ -11,10 +11,46 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x9K-7X-pNV">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAW-BY-N7S">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-oq-7TJ">
+                            <rect key="frame" x="20" y="20" width="560" height="31"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnw-Rg-XUv">
+                                    <rect key="frame" x="20" y="10" width="520" height="10"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="vuf-Zu-Pn2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Lnw-Rg-XUv" secondAttribute="trailing" constant="20" id="Af4-6u-rKb"/>
+                                <constraint firstItem="Lnw-Rg-XUv" firstAttribute="leading" secondItem="g6P-oq-7TJ" secondAttribute="leading" constant="20" id="ihX-vF-lCj"/>
+                                <constraint firstItem="Lnw-Rg-XUv" firstAttribute="centerY" secondItem="g6P-oq-7TJ" secondAttribute="centerY" id="tsd-t8-vVA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="g6P-oq-7TJ" firstAttribute="leading" secondItem="iAW-BY-N7S" secondAttribute="leading" constant="20" id="Ghm-Uh-w0S"/>
+                        <constraint firstAttribute="height" constant="61" id="Nrl-hg-Q83"/>
+                        <constraint firstAttribute="bottom" secondItem="g6P-oq-7TJ" secondAttribute="bottom" constant="10" id="acn-aG-rHH"/>
+                        <constraint firstItem="g6P-oq-7TJ" firstAttribute="top" secondItem="iAW-BY-N7S" secondAttribute="top" constant="20" id="ciJ-wN-iI5"/>
+                        <constraint firstAttribute="trailing" secondItem="g6P-oq-7TJ" secondAttribute="trailing" constant="20" id="rvE-Ke-exy"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x9K-7X-pNV">
+                    <rect key="frame" x="0.0" y="61" width="600" height="539"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dBK-X1-TfF">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -26,13 +62,23 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="iAW-BY-N7S" firstAttribute="leading" secondItem="P6K-fj-WDM" secondAttribute="leading" id="0Ik-0q-B85"/>
+                <constraint firstItem="iAW-BY-N7S" firstAttribute="top" secondItem="P6K-fj-WDM" secondAttribute="top" id="25v-K9-pWP"/>
+                <constraint firstItem="x9K-7X-pNV" firstAttribute="top" secondItem="iAW-BY-N7S" secondAttribute="bottom" id="5QL-Pa-6DL"/>
                 <constraint firstItem="x9K-7X-pNV" firstAttribute="leading" secondItem="P6K-fj-WDM" secondAttribute="leading" id="9I2-gh-phf"/>
                 <constraint firstAttribute="bottom" secondItem="x9K-7X-pNV" secondAttribute="bottom" id="LbQ-wT-8yf"/>
+                <constraint firstAttribute="trailing" secondItem="iAW-BY-N7S" secondAttribute="trailing" id="OI3-dN-8Zk"/>
                 <constraint firstItem="x9K-7X-pNV" firstAttribute="top" secondItem="P6K-fj-WDM" secondAttribute="top" id="RJi-VH-i3l"/>
                 <constraint firstAttribute="trailing" secondItem="x9K-7X-pNV" secondAttribute="trailing" id="Xxh-X4-yFo"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="RJi-VH-i3l"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="listView" destination="x9K-7X-pNV" id="YB7-wx-yvz"/>
+                <outlet property="titleLabel" destination="Lnw-Rg-XUv" id="h5r-Zt-Hyt"/>
             </connections>
             <point key="canvasLocation" x="422" y="-145"/>
         </view>

@@ -8,12 +8,15 @@
 
 #import "recipeListCells.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "UIView+position.h"
+
+#define headerHeight    61.f
 
 @implementation recipeListSize
 
 + (CGFloat) heightForRecommend
 {
-    return 410.f;
+    return 410.f + headerHeight;
 }
 
 + (UIEdgeInsets) insetForRecommend
@@ -39,7 +42,7 @@
 
 + (CGFloat) heightForSubscribe
 {
-    return 410.f;
+    return 410.f + headerHeight;;
 }
 
 + (UIEdgeInsets) insetForSubscribe
@@ -69,7 +72,7 @@
     height *= (numOfRecipes + 1)/2;
     height += ([self minimumLineSpacingForNormal] * (CGFloat)(numOfRecipes-1));
     
-    return height;
+    return height + headerHeight;;
 }
 
 + (UIEdgeInsets) insetForNormal
@@ -110,6 +113,15 @@
 
 @implementation recipeListCell
 
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    
+    if (self.userThumbnail) {
+        [self.userThumbnail.layer setCornerRadius:self.userThumbnail.frame.size.width/2.f];
+    }
+}
+
 - (void)setUserThumbnailWithURL:(NSString *)url {
     [_userThumbnail setImageWithURL:[NSURL URLWithString:url]];
 }
@@ -122,12 +134,21 @@
     [_recipeCommentLabel setText:comment];
 }
 
-- (void)setRecipeDescription:(NSString *)desc {
-    [_recipeDescriptionLabel setText:desc];
-}
-
 - (void)setRecipeImageWithURL:(NSString *)url {
-    [_recipeImageView setImageWithURL:[NSURL URLWithString:url]];
+    
+    [_loadingIndicator startAnimating];
+    
+    __weak typeof(_recipeImageView) weakImageView = _recipeImageView;
+    __weak typeof(_loadingIndicator) weakLoadingIndicator = _loadingIndicator;
+    [_recipeImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        [weakLoadingIndicator stopAnimating];
+        
+        if (image) {
+            [weakImageView setImage:image];
+        }
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        [weakLoadingIndicator stopAnimating];
+    }];
 }
 
 - (void)toggleRecipeLiked:(UIButton *)sender {
@@ -138,12 +159,9 @@
 
 @implementation recipeListCell_recommend
 
-
-
 @end
 
 @implementation recipeListCell_subscribe
-
 
 
 @end

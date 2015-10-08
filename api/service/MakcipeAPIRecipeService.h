@@ -19,7 +19,7 @@
 
 
 - (void) make_All_Recipe_list: (NSString *) token
-                      success:(void (^)(makcipeAPIRecipe *response))success
+                      success:(void (^)(NSMutableArray *response))success
                       failure:(void (^)(NSError *error))failure;
 
 - (void) make_Recc_Recipe_list: (NSString *) token
@@ -31,7 +31,7 @@
                        failure:(void (^)(NSError *error))failure;
 
 - (void) make_norm_Recipe_list: (NSString *) token
-                      recipeId: (NSString *) r_id
+                      recipeId: (int32_t) r_id
                        success:(void (^)(NSMutableArray *response))success
                        failure:(void (^)(NSError *error))failure;
 
